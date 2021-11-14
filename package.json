@@ -13,9 +13,9 @@
     "typecheck": "yarn workspaces run tsc --noEmit"
   },
   "workspaces": [
-    "chakra-theme",
-    "login-logout",
-    "related-products"
+    "packages/chakra-theme",
+    "packages/login-logout",
+    "packages/related-products"
   ],
   "dependencies": {
     "@gadgetinc/eslint-config": "^0.4.0",
