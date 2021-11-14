@@ -21,8 +21,8 @@ import { isEqual } from "lodash";
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
-import { api } from "../../Users/airhorns/Code/examples/login-logout/lib/api";
-import { WhoAmI } from "../../Users/airhorns/Code/examples/login-logout/lib/WhoAmI";
+import { api } from "../lib/api";
+import { WhoAmI } from "../lib/WhoAmI";
 
 const LogOutButton = () => {
   const [{ error, fetching }, logout] = useAction(api.currentSession.logOut, {

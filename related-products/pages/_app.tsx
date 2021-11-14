@@ -2,8 +2,9 @@ import { ChakraProvider, Container } from "@chakra-ui/react";
 import { Provider } from "@gadgetinc/react";
 import { theme } from "chakra-theme";
 import type { AppProps } from "next/app";
-import { api } from "../../Users/airhorns/Code/examples/related-products/lib/api";
-import "../../Users/airhorns/Code/examples/related-products/styles/globals.css";
+import React from "react";
+import { api } from "../lib/api";
+import "../styles/globals.css";
 
 function GadgetApp({ Component, pageProps }: AppProps) {
   return (

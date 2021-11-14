@@ -15,7 +15,7 @@ import {
 import { useFindMany } from "@gadgetinc/react";
 import { CUIAutoComplete } from "chakra-ui-autocomplete";
 import React, { useMemo, useState } from "react";
-import { api } from "../../Users/airhorns/Code/examples/related-products/lib/api";
+import { api } from "../lib/api";
 
 interface PickerItem {
   label: string;
