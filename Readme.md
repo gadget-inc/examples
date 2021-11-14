@@ -14,7 +14,7 @@ This is the administration interface frontend built in next.js. This UI saves da
 
 ## Login Logout
 
-[API Reference](https://docs.gadget.dev/api/login-logout-example)
+[Preview Site](https://gadget-login-logout.netlify.app/) | [API Reference](https://docs.gadget.dev/api/login-logout-example)
 
 This is an example of using Gadget's built in authentication system to log users in and out, and then grant only logged in users access to some data.
 
