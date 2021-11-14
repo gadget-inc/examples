@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { useGet } from "@gadgetinc/react";
 import React from "react";
-import { api } from "./api";
+import { api } from "../../Users/airhorns/Code/examples/login-logout/lib/api";
 
 export const WhoAmI = () => {
   const [{ error, fetching, data }, refresh] = useGet(api.currentSession, {

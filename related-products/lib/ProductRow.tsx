@@ -1,14 +1,14 @@
 import { Td, Tr } from "@chakra-ui/react";
 import { ShopifyProduct } from "@gadget-client/related-products-example";
 import { Select } from "@gadgetinc/api-client-core";
-import styles from "../styles/Home.module.css";
-import { AddNewPairedProduct } from "./AddNewRelatedProduct";
+import { AddNewPairedProduct } from "../../Users/airhorns/Code/examples/related-products/lib/AddNewRelatedProduct";
+import styles from "../../Users/airhorns/Code/examples/related-products/styles/Home.module.css";
 
 export const ProductRow = (props: {
   product: Select<ShopifyProduct, { id: true; title: true; pairedProducts: { edges: { node: { id: true; title: true } } } }>;
   onChange?: () => void;
 }) => {
-  const pairedProducts = props.product.pairedProducts!.edges.map((edge) => edge!.node);
+  const pairedProducts = props.product.pairedProducts!.edges.map((edge) => edge.node);
 
   return (
     <Tr>

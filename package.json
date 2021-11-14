@@ -22,6 +22,7 @@
     "@gadgetinc/prettier-config": "^0.3.0",
     "@netlify/plugin-nextjs": "4.0.0-beta.6",
     "eslint": "^7.15.0",
+    "jest": "^27.3.1",
     "lodash": "^4.17.20",
     "prettier": "^2.2.1",
     "typescript": "^4.1.2"
@@ -29,5 +30,8 @@
   "devDependencies": {
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0"
+  },
+  "resolutions": {
+    "eslint-plugin-react": "7.26.1"
   }
 }
