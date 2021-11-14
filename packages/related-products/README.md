@@ -1,6 +1,6 @@
 # Related Products Example
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3cbbc1c3-50c5-4fa7-a9bf-a5f34a7bb514/deploy-status)](https://app.netlify.com/sites/gadget-related-products/deploys)
+[![Deploy Status](https://img.shields.io/github/deployments/gadget-inc/examples/Production%20%E2%80%93%20related-products-example)](https://vercel.com/gadget/related-products-example)
 
 This is a related products picker for e-commerce merchants to select which products should be displayed together on their website.
 This is the administration interface frontend built in next.js. This UI saves data to a Gadget backend, which then writes data to a Shopify store powering the actual storefront.
