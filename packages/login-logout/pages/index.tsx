@@ -152,9 +152,13 @@ const Home: NextPage = () => {
         {isEqual(data?.state, { created: "loggedOut" }) && <LoginForm />}
       </Box>
 
-      <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
+      <Box display="flex" flexDirection="row" alignItems="center">
         <a href="https://gadget.dev" target="_blank" rel="noopener noreferrer">
           Powered by Gadget
+        </a>
+        &nbsp;|&nbsp;
+        <a href="https://github.com/gadget-inc/examples/tree/main/login-logout" target="_blank" rel="noopener noreferrer">
+          Github Repo
         </a>
         <WhoAmI />
       </Box>

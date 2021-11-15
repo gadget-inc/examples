@@ -76,6 +76,10 @@ const Home: NextPage = () => {
         <a href="https://gadget.dev" target="_blank" rel="noopener noreferrer">
           Powered by Gadget
         </a>
+        &nbsp;|&nbsp;
+        <a href="https://github.com/gadget-inc/examples/tree/main/related-products" target="_blank" rel="noopener noreferrer">
+          Github Repo
+        </a>
       </footer>
     </>
   );

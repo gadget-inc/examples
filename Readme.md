@@ -1,10 +1,10 @@
 # Gadget Examples
 
-This repo holds a bunch of example code that works with [Gadget](https://gadget.dev).
+This repo holds a collection of example applications built on top of [Gadget](https://gadget.dev) -- a fast backend builder.
 
 ## Related Products
 
-[Preview Site](https://gadget-related-products.vercel.app/) | [API Reference](https://docs.gadget.dev/api/related-products-example)
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/related-products) | [Preview Site](https://gadget-related-products.vercel.app/) | [API Reference](https://docs.gadget.dev/api/related-products-example)
 
 This is a related products picker for e-commerce merchants to select which products should be displayed together on their website.
 This is the administration interface frontend built in next.js. This UI saves data to a Gadget backend, which then writes data to a Shopify store powering the actual storefront.
@@ -12,11 +12,24 @@ This is the administration interface frontend built in next.js. This UI saves da
 - Backend: Gadget via GraphQL
 - Frontend: next.js with `@gadgetinc/react`
 
+Features used:
+
+- Gadget generated GraphQL API
+- Shopify Connection
+- `HasMany`, `BelongsTo`, and `HasManyThrough` relationships
+- Generated API client (`@gadget-client/related-products-example` package) and React bindings (`@gadget-inc/react` package)
+
 ## Login Logout
 
-[Preview Site](https://gadget-login-logout.vercel.app/) | [API Reference](https://docs.gadget.dev/api/login-logout-example)
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/login-logout) | [Preview Site](https://gadget-login-logout.vercel.app/) | [API Reference](https://docs.gadget.dev/api/login-logout-example)
 
 This is an example of using Gadget's built in authentication system to log users in and out, and then grant only logged in users access to some data.
 
 - Backend: Gadget via GraphQL
 - Frontend: next.js with `@gadgetinc/react`
+
+Features used:
+
+- Gadget generated GraphQL API
+- Gadget authentication system (`User` model)
+- Generated API client (`@gadget-client/login-logout-example` package) and React bindings (`@gadget-inc/react` package)
