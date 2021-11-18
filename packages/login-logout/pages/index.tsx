@@ -17,6 +17,7 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import { useAction, useFindMany, useGet } from "@gadgetinc/react";
+import { Footer } from "chakra-theme/Footer";
 import { isEqual } from "lodash";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -152,16 +153,9 @@ const Home: NextPage = () => {
         {isEqual(data?.state, { created: "loggedOut" }) && <LoginForm />}
       </Box>
 
-      <Box display="flex" flexDirection="row" alignItems="center">
-        <a href="https://gadget.dev" target="_blank" rel="noopener noreferrer">
-          Powered by Gadget
-        </a>
-        &nbsp;|&nbsp;
-        <a href="https://github.com/gadget-inc/examples/tree/main/login-logout" target="_blank" rel="noopener noreferrer">
-          Github Repo
-        </a>
+      <Footer folder="login-logout">
         <WhoAmI />
-      </Box>
+      </Footer>
     </>
   );
 };

@@ -19,6 +19,21 @@ Features used:
 - `HasMany`, `BelongsTo`, and `HasManyThrough` relationships
 - Generated API client (`@gadget-client/related-products-example` package) and React bindings (`@gadget-inc/react` package)
 
+## Simple Blog
+
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/simple-blog) | [Preview Site](https://gadget-simple-blog.vercel.app/) | [API Reference](https://docs.gadget.dev/api/simple-blog-example)
+
+Everyone and their dog has a blog these days -- here's how you build a simple one in Gadget.
+
+- Backend: Gadget via GraphQL
+- Frontend: next.js with `@gadgetinc/react` and ChakraUI
+
+Features used:
+
+- Gadget generated GraphQL API
+- Gadget authentication system (`User` model)
+- Generated API client (`@gadget-client/simple-blog-example` package) and React bindings (`@gadget-inc/react` package)
+
 ## Login Logout
 
 [Code](https://github.com/gadget-inc/examples/tree/main/packages/login-logout) | [Preview Site](https://gadget-login-logout.vercel.app/) | [API Reference](https://docs.gadget.dev/api/login-logout-example)

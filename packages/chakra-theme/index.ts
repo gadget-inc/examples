@@ -6,3 +6,5 @@ const config: ThemeConfig = {
 };
 
 export const theme = extendTheme({ config });
+
+export const dateFormat = new Intl.DateTimeFormat("en-CA");
