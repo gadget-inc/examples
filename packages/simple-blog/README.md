@@ -1,6 +1,6 @@
 # Simple BLog Gadget Example
 
-[![Deploy Status](https://img.shields.io/github/deployments/gadget-inc/examples/Production%20%E2%80%93%20simple-blog-example)](https://vercel.com/gadget/simple-blog-example)
+[![Deploy Status](https://img.shields.io/github/deployments/gadget-inc/examples/Production%20%E2%80%93%20simple-blog-example)](https://vercel.com/gadget/simple-blog-example) | [Preview Site](https://gadget-blog-example.vercel.app/) | [API Reference](https://docs.gadget.dev/api/simple-blog-example)
 
 This is an example of using Gadget to build a simple blog.
 

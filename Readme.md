@@ -21,7 +21,7 @@ Features used:
 
 ## Simple Blog
 
-[Code](https://github.com/gadget-inc/examples/tree/main/packages/simple-blog) | [Preview Site](https://gadget-simple-blog.vercel.app/) | [API Reference](https://docs.gadget.dev/api/simple-blog-example)
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/simple-blog) | [Preview Site](https://gadget-blog-example.vercel.app/) | [API Reference](https://docs.gadget.dev/api/simple-blog-example)
 
 Everyone and their dog has a blog these days -- here's how you build a simple one in Gadget.
 
