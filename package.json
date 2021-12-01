@@ -17,7 +17,8 @@
     "packages/login-logout",
     "packages/related-products",
     "packages/simple-blog",
-    "packages/apollo-blog"
+    "packages/apollo-blog",
+    "packages/file-upload"
   ],
   "dependencies": {
     "@gadgetinc/eslint-config": "^0.4.0",
@@ -33,6 +34,6 @@
     "@types/react": "^17.0.0"
   },
   "resolutions": {
-    "@gadgetinc/api-client-core": "0.4.5"
+    "@gadgetinc/api-client-core": "0.4.6"
   }
 }

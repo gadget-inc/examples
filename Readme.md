@@ -48,3 +48,18 @@ Features used:
 - Gadget generated GraphQL API
 - Gadget authentication system (`User` model)
 - Generated API client (`@gadget-client/login-logout-example` package) and React bindings (`@gadget-inc/react` package)
+
+## File Uploads
+
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/file-uploads) | [Preview Site](https://gadget-file-uploads-example.vercel.app/) | [API Reference](https://docs.gadget.dev/api/files-example)
+
+This is an example of using Gadget's built in authentication system to log users in and out, and then grant only logged in users access to some data.
+
+- Backend: Gadget via GraphQL
+- Frontend: next.js with `@gadgetinc/react`
+
+Features used:
+
+- Gadget generated GraphQL API
+- Gadget authentication system (`User` model)
+- Generated API client (`@gadget-client/login-logout-example` package) and React bindings (`@gadget-inc/react` package)
