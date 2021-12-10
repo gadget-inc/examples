@@ -1,12 +1,11 @@
 import { CloseIcon } from "@chakra-ui/icons";
 import { Alert, AlertIcon, Box, Button, FormControl, FormLabel, Heading, IconButton, Image, Input } from "@chakra-ui/react";
 import { useAction } from "@gadgetinc/react";
-import { Footer } from "chakra-theme/Footer";
 import type { NextPage } from "next";
-import Head from "next/head";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { api } from "../lib/api";
+import { ExampleContainer } from "../lib/ExampleContainer";
 
 const UploadForm = () => {
   const [name, setName] = useState("");
@@ -89,18 +88,9 @@ const UploadForm = () => {
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Head>
-        <title>File Upload Example</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" flexGrow={1} padding={4}>
-        <UploadForm />
-      </Box>
-
-      <Footer folder="file-upload" />
-    </>
+    <ExampleContainer>
+      <UploadForm />
+    </ExampleContainer>
   );
 };
 
