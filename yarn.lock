@@ -1648,12 +1648,12 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@gadget-client/files-example@^*":
-  version "1.16.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/1473/1771/227#763969b58789554a47e9bf6e7c7935b927791c9c"
-  integrity sha1-djlptYeJVUpH6b9ufHk1uSd5HJw=
+"@gadget-client/files-example@1.30.0":
+  version "1.30.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/1473/1771/254#b4a7788dde1e98b18c9161694f783fd1e66f4147"
+  integrity sha1-tKd4jd4emLGMkWFpT3g/0eZvQUc=
   dependencies:
-    "@gadgetinc/api-client-core" "0.4.6"
+    "@gadgetinc/api-client-core" "0.4.7"
 
 "@gadget-client/login-logout-example@^1.9.0":
   version "1.9.0"
@@ -1676,25 +1676,10 @@
   dependencies:
     "@gadgetinc/api-client-core" "0.4.5"
 
-"@gadgetinc/api-client-core@0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.4.5.tgz#48cc7114be4053f4edb5fde6beebcc345e898d61"
-  integrity sha512-eF4bLOn3zDUef6tTzxTNkXjb1ITWiaKoLljBtRfgKU9TbRHiqoiAlarfS315L9HOwfgTccBcWobRAOgXgenvYw==
-  dependencies:
-    "@urql/core" "^2.1.5"
-    cross-fetch "^3.0.6"
-    gql-query-builder "^3.5.5"
-    graphql "^15.5.0"
-    graphql-ws "^5.1.2"
-    isomorphic-ws "^4.0.1"
-    lodash.clonedeep "^4.5.0"
-    lodash.isequal "^4.5.0"
-    ws "^7.4.6"
-
-"@gadgetinc/api-client-core@0.4.6", "@gadgetinc/api-client-core@^0.4", "@gadgetinc/api-client-core@^0.4.4":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.4.6.tgz#bad4a4422062c5729aa9458c5269a522432f05cf"
-  integrity sha512-bfrcqTchMpnCDoF0vUaWklVM8WYkLU2uhP4DWGBrvihy2uznymf/Jmd+Ymo7rX850iaWAO8+d9Lkxj4sHRyRGQ==
+"@gadgetinc/api-client-core@0.4.5", "@gadgetinc/api-client-core@0.4.7", "@gadgetinc/api-client-core@^0.4", "@gadgetinc/api-client-core@^0.4.4":
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.4.7.tgz#97f89b07c3bca9df08d834f46f183e9b3d41deb1"
+  integrity sha512-tHJ+pS0OkxLoa+fQpGJ1CNbj97UEfj2WouS67ZbTVn4CKqwfaQoVEEk8O3WeAMX6EGqIP7+ZnPFy9N0tcwkAKQ==
   dependencies:
     "@urql/core" "^2.1.5"
     "@urql/exchange-multipart-fetch" "^0.1.13"

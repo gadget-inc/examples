@@ -13,7 +13,7 @@
     "@chakra-ui/react": "^1.7.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@gadget-client/files-example": "^*",
+    "@gadget-client/files-example": "1.30.0",
     "@gadgetinc/react": "^0.2.2",
     "@uppy/aws-s3": "^2.0.7",
     "@uppy/core": "^2.1.4",
