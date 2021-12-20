@@ -10,7 +10,8 @@
     "lint:prettier": "node --max-old-space-size=4096 node_modules/.bin/prettier --check \"**/*.{js,ts,tsx}\"",
     "lint:eslint": "node --max-old-space-size=4096 node_modules/.bin/eslint --quiet --ext ts,tsx .",
     "lint:fix": "node --max-old-space-size=4096 node_modules/.bin/prettier --write --check \"**/*.{js,ts,tsx}\" && eslint --ext ts,tsx --fix .",
-    "typecheck": "yarn workspaces run tsc --noEmit"
+    "typecheck": "yarn workspaces run tsc --noEmit",
+    "x": "esbuild-dev --watch=false"
   },
   "workspaces": [
     "packages/chakra-theme",
@@ -31,7 +32,8 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.10",
-    "@types/react": "^17.0.0"
+    "@types/react": "^17.0.0",
+    "esbuild-dev": "^0.9.1"
   },
   "resolutions": {
     "@gadgetinc/api-client-core": "0.4.6"
