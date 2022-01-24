@@ -19,7 +19,8 @@
     "packages/related-products",
     "packages/simple-blog",
     "packages/apollo-blog",
-    "packages/file-upload"
+    "packages/file-upload",
+    "packages/margin-calculator"
   ],
   "dependencies": {
     "@gadgetinc/eslint-config": "^0.4.0",

@@ -53,7 +53,7 @@ Features used:
 
 [Code](https://github.com/gadget-inc/examples/tree/main/packages/file-uploads) | [Preview Site](https://gadget-file-uploads-example.vercel.app/) | [API Reference](https://docs.gadget.dev/api/files-example)
 
-This is an example of using Gadget's built in authentication system to log users in and out, and then grant only logged in users access to some data.
+This is an example of using Gadget's built in file storage system where applications can easily store images, pdfs, audio files, or anything on behalf of users.
 
 - Backend: Gadget via GraphQL
 - Frontend: next.js with `@gadgetinc/react`
@@ -61,5 +61,21 @@ This is an example of using Gadget's built in authentication system to log users
 Features used:
 
 - Gadget generated GraphQL API
-- Gadget authentication system (`User` model)
-- Generated API client (`@gadget-client/login-logout-example` package) and React bindings (`@gadget-inc/react` package)
+- `File` field
+- Generated API client (`@gadget-client/files-example` package) and React bindings (`@gadget-inc/react` package)
+- `uppy` based upload widget and Gadget's direct-to-storage file upload feature
+
+## Margin Calculator
+
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/margin-calculator)
+
+This is an example app implementing a profit margin calculator for an e-commerce merchant. The Gadget backend connects to Shopify to retrieve quotes, and then decorates them with some extra data that the e-commerce merchant populates using this frontend. The GraphQL API from the backend makes it easy to render a custom UI showing some data where Shopify is the source of truth blended with data where Gadget is the source of truth.
+
+- Backend: Gadget via GraphQL
+- Frontend: Remix with `@gadgetinc/react`
+
+Features used:
+
+- Gadget generated GraphQL API
+- Gadget's Shopify connection
+- Generated API client (`@gadget-client/margin-calculator` package) and React bindings (`@gadget-inc/react` package)
