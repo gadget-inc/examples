@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<script src="YOUR DIRECT SCRIPT TAG URL HERE"></script>
+<script>
+  window.GadgetClient = new Gadget({ authenticationMode: { apiKey: "YOUR API KEY" } })
+</script>
+<script src="{{ 'product-quiz.js' | asset_url }}" defer="defer"></script>
+<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="page-width page-width--narrow">
+  <h1 class="main-page-title page-title h0">
+    {{ page.title | escape }}
+  </h1>
+  <div class="rte">
+    {{ page.content }}
+  </div>
+  <div>
+    <product-quiz class="quiz">
+      <form action="post" class="form" novalidate="validate">
+        <h2 class="product-quiz__title">Loading...</h2>
+        <div class="product-quiz__body">
+          <span>
+            
+          </span>
+        </div>
+        <div class="product-quiz__questions" id="questions">
+          <div class="product-quiz__question">
+            <span class="product-quiz__question-answer">
+            </span>
+          </div>
+        </div>
+        <button
+                type="submit"
+                class="product-quiz__submit button button--secondary"
+                >
+          Get my results!
+        </button>
+      </form>
+    </product-quiz>
+  </div>
+</div>
+
+{% schema %}
+{
+"name": "t:sections.quiz-page.name",
+"tag": "section",
+"class": "spaced-section"
+}
+{% endschema %}
