@@ -101,21 +101,21 @@ export const ResultMappingForm = ({ quizResult, quiz }) => {
         <FormLayout>
           <FormLayout.Group>
             {sortedQuestions &&
-              sortedQuestions.map((q, i) => {
+              sortedQuestions.map((q) => {
                 const _answers = [];
-                q.answers.edges.forEach((a, i) => {
+                q.answers.edges.forEach((a) => {
                   _answers.push({
                     label: a.node.text,
                     value: a.node.id,
                     sequence: a.node.sequence,
-                    key: i,
+                    key: a.node.id,
                   });
                 });
                 _answers = _answers.sort(function (a, b) {
                   return a.sequence - b.sequence;
                 });
                 return (
-                  <Layout.Section key={i}>
+                  <Layout.Section key={q.id}>
                     <Card title={q.title}>
                       <Layout.Section>
                         <Select

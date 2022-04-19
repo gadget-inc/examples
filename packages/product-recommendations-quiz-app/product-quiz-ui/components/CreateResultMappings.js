@@ -9,10 +9,10 @@ export const CreateResultMappings = ({ currentResults, currentQuiz }) => {
     <Layout.Section>
       <Layout.Section>
         {currentResults &&
-          unmappedCurrentResults.map((r, i) => {
+          unmappedCurrentResults.map((r) => {
             return (
               <ResultMappingForm
-                key={i}
+                key={r._id}
                 quizResult={r}
                 _id={r._id}
                 quiz={currentQuiz}
