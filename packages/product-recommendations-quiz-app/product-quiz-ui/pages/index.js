@@ -1,6 +1,6 @@
 import { Card, Frame, Layout, Page, Stack } from "@shopify/polaris";
 import Head from "next/head";
-import { QuizList } from "./../components/QuizList.js"
+import { QuizList } from "./../components/QuizList.js";
 
 export default function Home() {
   return (

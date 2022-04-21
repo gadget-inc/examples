@@ -12,7 +12,7 @@ import {
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
-import { api } from "./../../api.js"
+import { api } from "./../../api.js";
 import { QuizTitle } from "../../components/QuizTitle.js";
 import { BodyText } from "../../components/BodyText.js";
 import { CreateQuestions } from "../../components/CreateQuestions.js";
@@ -107,7 +107,7 @@ export default function Create() {
                 {createdQuiz && (
                   <Button
                     onClick={() =>
-                      router.push(`/quiz/answers/quiz/${createdQuiz.id}`)
+                      router.push(`/quiz/answers/${createdQuiz.id}`)
                     }
                   >
                     Add answers
@@ -120,4 +120,4 @@ export default function Create() {
       </>
     </>
   );
-};
+}

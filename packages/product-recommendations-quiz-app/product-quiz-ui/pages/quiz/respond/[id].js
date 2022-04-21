@@ -1,16 +1,9 @@
 import { useAction, useFindOne } from "@gadgetinc/react";
-import {
-  Button,
-  Card,
-  Frame,
-  Layout,
-  Page,
-  Stack,
-} from "@shopify/polaris";
+import { Button, Card, Frame, Layout, Page, Stack } from "@shopify/polaris";
 import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { api } from "./../../../../api.js"
+import { api } from "./../../../api.js";
 import { QuestionCard } from "../../../components/QuestionCard.js";
 import _ from "lodash";
 
@@ -87,7 +80,7 @@ export default function Respond() {
 
   const [createdResponse, setCreatedResponse] = useState(null);
 
-  const currentQuiz = quiz.data;
+  const currentQuiz = quiz[0].data;
 
   const handleStartResponse = async (event) => {
     event.preventDefault();

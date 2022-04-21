@@ -2,7 +2,7 @@ import { useFindOne } from "@gadgetinc/react";
 import { Button, Card, Layout, Stack } from "@shopify/polaris";
 import { useRouter } from "next/router";
 import { QuestionAnswerForm } from "../../../components/questionAnswerForm.js";
-import { api } from "../../../api.js"
+import { api } from "./../../../api.js";
 
 export default function Answers() {
   const router = useRouter();
@@ -65,9 +65,7 @@ export default function Answers() {
           <Card title={"Add results and map quiz"}>
             <Stack>
               <Button
-                onClick={() =>
-                  router.push(`/quiz/mapping/${currentQuiz.id}`)
-                }
+                onClick={() => router.push(`/quiz/mapping/${currentQuiz.id}`)}
               >
                 On to adding results!
               </Button>
@@ -80,7 +78,7 @@ export default function Answers() {
     return (
       <Layout>
         <Layout.Section>
-          <Card title="There was an issue fetching the current quiz."/>
+          <Card title="There was an issue fetching the current quiz." />
         </Layout.Section>
       </Layout>
     );

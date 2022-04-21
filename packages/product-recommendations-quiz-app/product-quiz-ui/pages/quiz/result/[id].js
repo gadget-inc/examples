@@ -3,12 +3,13 @@ import { Button, Card, Frame, Layout, Page, Stack } from "@shopify/polaris";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { api } from "./../../../../api.js"
+import { api } from "./../../../api.js";
 
 export default function Result() {
   const urlRouter = useRouter();
 
-  const response = useFindOne(api.response, parseInt(urlRouter.query.id), {
+  console.log(urlRouter.query.id);
+  const response = useFindOne(api.response, urlRouter.query.id, {
     select: {
       id: true,
       conversionState: true,
@@ -44,7 +45,7 @@ export default function Result() {
     },
   });
 
-  if (response[0].data.result) {
+  if (response[0].data) {
     const result = response[0].data.result;
     const productSuggestion = result.productSuggestion;
     const productImageUrl =
@@ -126,4 +127,3 @@ export default function Result() {
     );
   }
 }
-

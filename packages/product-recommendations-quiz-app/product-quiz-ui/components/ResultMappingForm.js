@@ -1,12 +1,6 @@
-import {
-  Button,
-  Card,
-  FormLayout,
-  Layout,
-  Select
-} from "@shopify/polaris";
+import { Button, Card, FormLayout, Layout, Select } from "@shopify/polaris";
 import { useState } from "react";
-import { api } from "./../../../../api.js"
+import { api } from "./../api.js";
 import _ from "lodash";
 
 export const ResultMappingForm = ({ quizResult, quiz }) => {
@@ -20,15 +14,15 @@ export const ResultMappingForm = ({ quizResult, quiz }) => {
 
   const [selectedAnswer, setSelectedAnswer] = useState([]);
   const handleChangeSelectedAnswer = (value) => {
-      if (
-        selectedAnswers.filter(
-          (a) => a != value && selectedAnswers.length <= questions.length
-        )
-      ) {
-        setSelectedAnswers([...selectedAnswers, value]);
-        setSelectedAnswer(value);
-      }
-    };
+    if (
+      selectedAnswers.filter(
+        (a) => a != value && selectedAnswers.length <= questions.length
+      )
+    ) {
+      setSelectedAnswers([...selectedAnswers, value]);
+      setSelectedAnswer(value);
+    }
+  };
 
   const handleSubmitMapping = (event) => {
     event.preventDefault();
@@ -131,17 +125,17 @@ export const ResultMappingForm = ({ quizResult, quiz }) => {
                   </Layout.Section>
                 );
               })}
-              <Card title={`Submit mapping?`}>
-                <Layout.Section>
-                  <Button
-                    onClick={handleSubmitMapping}
-                    disabled={!quizResult || isSubmitting}
-                    loading={isSubmitting}
-                  >
-                    Save mapping
-                  </Button>
-                </Layout.Section>
-              </Card>
+            <Card title={`Submit mapping?`}>
+              <Layout.Section>
+                <Button
+                  onClick={handleSubmitMapping}
+                  disabled={!quizResult || isSubmitting}
+                  loading={isSubmitting}
+                >
+                  Save mapping
+                </Button>
+              </Layout.Section>
+            </Card>
             <Card title={`Delete result?`}>
               <Layout.Section>
                 <Button

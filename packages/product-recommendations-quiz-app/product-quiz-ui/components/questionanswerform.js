@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Card, Layout } from "@shopify/polaris";
 import { AnswersList } from "./AnswersList.js";
-import { api } from "../api.js";
+import { api } from "./../api.js";
 import _ from "lodash";
 
 export const QuestionAnswerForm = ({ question, refresh }) => {
@@ -9,17 +9,15 @@ export const QuestionAnswerForm = ({ question, refresh }) => {
   const [answers, setAnswers] = useState([]);
 
   const addAnswer = (answer) => {
-      setAnswers([...answers, answer]);
-    };
+    setAnswers([...answers, answer]);
+  };
 
   const updateAnswer = (updatedAnswer) => {
-    if (
-      !(updatedAnswer.text && updatedAnswer.sequence && updatedAnswer._id)
-    ) {
+    if (!(updatedAnswer.text && updatedAnswer.sequence && updatedAnswer._id)) {
       return;
     }
 
-    const newAnswers = []
+    const newAnswers = [];
 
     answers.forEach((answer) => {
       if (answer._id === updatedAnswer._id) {
@@ -64,17 +62,17 @@ export const QuestionAnswerForm = ({ question, refresh }) => {
         );
       })
     )
-    .then((result) => {
-      console.log(`Create Answers result:`, result);
-      setAnswers([]);
-      refresh();
-    })
-    .catch((error) => {
-      console.log(`Create Answers error:`, error);
-    })
-    .finally(() => {
-      setIsSubmitting(false);
-    });
+      .then((result) => {
+        console.log(`Create Answers result:`, result);
+        setAnswers([]);
+        refresh();
+      })
+      .catch((error) => {
+        console.log(`Create Answers error:`, error);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (

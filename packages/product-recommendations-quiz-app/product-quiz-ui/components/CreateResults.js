@@ -1,10 +1,6 @@
-import {
-  Banner,
-  Button,
-  Card,
-  Layout,
-} from "@shopify/polaris";
+import { Banner, Button, Card, Layout } from "@shopify/polaris";
 import { useState } from "react";
+import { api } from "./../api.js";
 import { QuizResultsForm } from "./QuizResultsForm";
 
 export const CreateResults = ({ quiz, products }) => {
@@ -14,31 +10,31 @@ export const CreateResults = ({ quiz, products }) => {
   const [result, setResult] = useState(null);
 
   const addQuizResult = (question) => {
-      setQuizResults([...quizResults, question]);
-    };
+    setQuizResults([...quizResults, question]);
+  };
 
   const updateQuizResult = (updatedQuizResult) => {
-      if (
-        !(
-          updatedQuizResult.body &&
-          updatedQuizResult.quiz &&
-          updatedQuizResult._id
-        )
-      ) {
-        return;
+    if (
+      !(
+        updatedQuizResult.body &&
+        updatedQuizResult.quiz &&
+        updatedQuizResult._id
+      )
+    ) {
+      return;
+    }
+
+    const newQuizResults = [];
+
+    quizResults.forEach((q) => {
+      if (q._id === updatedQuizResult._id) {
+        newQuizResults.push(updatedQuizResult);
+      } else {
+        newQuizResults.push(q);
       }
-
-      const newQuizResults = []
-
-      quizResults.forEach((q) => {
-        if (q._id === updatedQuizResult._id) {
-            newQuizResults.push(updatedQuizResult);
-        } else {
-            newQuizResults.push(q);
-        }
-      }); 
-      setQuizResults(newQuizResults);
-    };
+    });
+    setQuizResults(newQuizResults);
+  };
 
   const handleSubmitQuizResults = (event) => {
     event.preventDefault();
@@ -102,7 +98,7 @@ export const CreateResults = ({ quiz, products }) => {
                 key={result._id}
                 _id={result._id}
                 result={result}
-                updateQuizResult={updateQuizResult(result)}
+                updateQuizResult={(_result) => updateQuizResult(_result)}
                 quiz={quiz}
                 products={products}
               />
@@ -137,14 +133,14 @@ export const CreateResults = ({ quiz, products }) => {
           )}
         </Layout.Section>
         <Layout.Section>
-        <Button
+          <Button
             onClick={handleSubmitQuizResults}
             disabled={!quiz || isSubmitting}
             primary
             loading={isSubmitting}
-        >
+          >
             Save Results
-        </Button>
+          </Button>
         </Layout.Section>
       </Card>
     </Layout.Section>

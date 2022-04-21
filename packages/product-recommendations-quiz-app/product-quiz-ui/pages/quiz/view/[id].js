@@ -1,19 +1,13 @@
 import { useFindOne } from "@gadgetinc/react";
-import {
-  Card,
-  Frame,
-  Layout,
-  Page,
-  Stack,
-} from "@shopify/polaris";
+import { Card, Frame, Layout, Page, Stack } from "@shopify/polaris";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { api } from "./../../../../api.js"
+import { api } from "./../../../api.js";
 
 export default function View() {
   const urlRouter = useRouter();
 
-  const quiz = useFindOne(api.quiz, urlRouter.query.id, {
+  const quiz = useFindOne(api.quiz, parseInt(urlRouter.query.id), {
     select: {
       id: true,
       title: true,
@@ -67,7 +61,7 @@ export default function View() {
     },
   });
 
-  const currentQuiz = quiz.data;
+  const currentQuiz = quiz[0].data;
 
   if (currentQuiz) {
     const responseUrl = `/quiz/respond/${currentQuiz.id}`;

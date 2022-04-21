@@ -1,12 +1,6 @@
-import {
-  Banner,
-  Button,
-  Card,
-  Form,
-  Layout,
-} from "@shopify/polaris";
+import { Banner, Button, Card, Form, Layout } from "@shopify/polaris";
 import React, { useState } from "react";
-import { api } from "./../../api.js"
+import { api } from "./../api.js";
 import { QuestionForm } from "./QuestionForm.js";
 import _ from "lodash";
 
@@ -17,32 +11,32 @@ export const CreateQuestions = ({ quiz }) => {
   const [result, setResult] = useState(null);
 
   const addQuestion = (question) => {
-      setQuestions([...questions, question]);
-    };
+    setQuestions([...questions, question]);
+  };
 
   const updateQuestion = (updatedQuestion) => {
-      if (
-        !(
-          updatedQuestion.title &&
-          updatedQuestion.sequence &&
-          updatedQuestion._id
-        )
-      ) {
-        return;
+    if (
+      !(
+        updatedQuestion.title &&
+        updatedQuestion.sequence &&
+        updatedQuestion._id
+      )
+    ) {
+      return;
+    }
+
+    const newQuestions = [];
+
+    questions.forEach((q) => {
+      if (q._id === updatedQuestion._id) {
+        newQuestions.push(updatedQuestion);
+      } else {
+        newQuestions.push(q);
       }
+    });
 
-      const newQuestions = []
-
-      questions.forEach((q) => {
-          if (q._id === updatedQuestion._id) {
-              newQuestions.push(updatedQuestion);
-          } else {
-              newQuestions.push(q);
-          }
-      });
-
-      setQuestions(newQuestions);
-    };
+    setQuestions(newQuestions);
+  };
 
   const handleSubmitQuestions = (event) => {
     event.preventDefault();
@@ -106,7 +100,7 @@ export const CreateQuestions = ({ quiz }) => {
               <QuestionForm
                 key={question._id}
                 _id={question._id}
-                updateQuestion={updateQuestion(_question)}
+                updateQuestion={(_question) => updateQuestion(_question)}
                 question={question}
               />
             );

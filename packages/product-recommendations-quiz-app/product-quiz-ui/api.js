@@ -1,4 +1,4 @@
-import { Client } from "@gadget-client/[YOUR CLIENT HERE]";
+import { Client } from "@gadget-client/YOUR CLIENT HERE";
 
 export const api = new Client({
   authenticationMode: {

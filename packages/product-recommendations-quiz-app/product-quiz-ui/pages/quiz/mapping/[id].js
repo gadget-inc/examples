@@ -1,12 +1,7 @@
 import { useFindOne } from "@gadgetinc/react";
-import {
-  Button,
-  Card,
-  Layout,
-  Stack
-} from "@shopify/polaris";
+import { Button, Card, Layout, Stack } from "@shopify/polaris";
 import { useRouter } from "next/router";
-import { api } from "./../../../../api.js"
+import { api } from "./../../../api.js";
 import { CreateResultMappings } from "../../../components/CreateResultMappings.js";
 import { MappedQuizResults } from "../../../components/MappedQuizResults.js";
 import { CreateResults } from "../../../components/CreateResults.js";
@@ -15,7 +10,8 @@ import _ from "lodash";
 export default function Mapping() {
   const router = useRouter();
 
-  const quiz = useFindOne(api.quiz, router.query.id, {
+  console.log(router.query.id);
+  const quiz = useFindOne(api.quiz, parseInt(router.query.id), {
     select: {
       id: true,
       title: true,
@@ -73,6 +69,7 @@ export default function Mapping() {
   const fetchedProducts = api.shopifyProduct
     .findMany({
       first: 250,
+      search: "bundle",
       select: {
         id: true,
         title: true,
@@ -100,7 +97,7 @@ export default function Mapping() {
       });
     });
 
-  const currentQuiz = quiz.data;
+  let currentQuiz = quiz[0].data;
 
   if (currentQuiz) {
     const quizTitle = currentQuiz.title;
@@ -125,9 +122,7 @@ export default function Mapping() {
         </Layout.Section>
         <Layout.Section>
           {currentResults && (
-            <Card
-              title={`Map answers to results for the ${quizTitle} quiz.`}
-            >
+            <Card title={`Map answers to results for the ${quizTitle} quiz.`}>
               <CreateResultMappings
                 currentResults={currentResults}
                 currentQuiz={currentQuiz}
