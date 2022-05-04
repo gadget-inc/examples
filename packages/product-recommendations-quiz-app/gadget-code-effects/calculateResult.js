@@ -22,7 +22,7 @@ module.exports = async ({ api, record, params, logger }) => {
       
     const filteredResults = []
     potentialResults.forEach((p) => {
-      if ((parseInt(p.record.id) === parseInt(record.id)) && p.result) {
+      if (p.response && (parseInt(p.response.id) === parseInt(record.id)) && p.result) {
         filteredResults.push(parseInt(p.result.id));
       }
     });
