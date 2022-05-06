@@ -8,14 +8,10 @@ const nextConfig = {
 
 const webpack = require("webpack");
 
-const { parsed: myEnv } = require("dotenv").config({
-  path: ".env",
-});
-
 module.exports = {
   nextConfig,
   webpack(config) {
-    config.plugins.push(new webpack.EnvironmentPlugin(myEnv));
+    config.plugins.push(new webpack.EnvironmentPlugin({API_KEY: process.env.API_KEY}));
     return config;
   },
 };
