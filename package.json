@@ -17,7 +17,6 @@
     "packages/chakra-theme",
     "packages/login-logout",
     "packages/related-products",
-    "packages/simple-blog",
     "packages/apollo-blog",
     "packages/file-upload",
     "packages/margin-calculator"
