@@ -4,7 +4,6 @@ import { Select } from "@gadgetinc/api-client-core";
 import { useFindMany } from "@gadgetinc/react";
 import { dateFormat, theme } from "chakra-theme";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import React from "react";
 import ReactMarkdown from "react-markdown";
 import { api } from "./api";
 
@@ -23,11 +22,11 @@ const PostCard = (props: { post: Select<Post, typeof PostSelection> }) => {
         {props.post.title}
       </Heading>
       <Text size="sm" color={useColorModeValue("gray.700", "gray.200")}>
-        Written by {props.post.author.name} on {dateFormat.format(props.post.createdAt)}
+        Written by {props.post.author?.name} on {dateFormat.format(props.post.createdAt)}
       </Text>
       <Box marginTop={3}>
         <ReactMarkdown components={ChakraUIRenderer(theme)} skipHtml>
-          {props.post.body.markdown}
+          {props.post.body?.markdown || ""}
         </ReactMarkdown>
       </Box>
     </Box>
