@@ -84,12 +84,7 @@ export const QuestionAnswerForm = ({ question, refresh }) => {
           removeAnswer={(id) => removeAnswer(id)}
           question={question}
         />
-        <Button
-          disabled={!question || isSubmitting}
-          primary
-          loading={isSubmitting}
-          onClick={handleSubmitAnswers}
-        >
+        <Button disabled={!question || isSubmitting} primary loading={isSubmitting} onClick={handleSubmitAnswers}>
           Save answers
         </Button>
         <Button

@@ -1,8 +1,4 @@
-import {
-  Card,
-  FormLayout,
-  Layout,
-} from "@shopify/polaris";
+import { Card, FormLayout, Layout } from "@shopify/polaris";
 import _ from "lodash";
 
 export const MappedQuizResults = ({ mappedResults }) => {
@@ -24,12 +20,7 @@ export const MappedQuizResults = ({ mappedResults }) => {
               </FormLayout.Group>
             </FormLayout>
             <Layout.Section>
-              {r.productSuggestion && (
-                <Card
-                  title={`Product Suggestion: ` + r.productSuggestion.title}
-                >
-                </Card>
-              )}
+              {r.productSuggestion && <Card title={`Product Suggestion: ` + r.productSuggestion.title}></Card>}
             </Layout.Section>
           </Card>
         );

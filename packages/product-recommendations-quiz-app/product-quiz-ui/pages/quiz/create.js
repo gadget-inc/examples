@@ -1,14 +1,5 @@
 import { useAction } from "@gadgetinc/react";
-import {
-  Banner,
-  Button,
-  Card,
-  Form,
-  Frame,
-  Layout,
-  Page,
-  Stack,
-} from "@shopify/polaris";
+import { Banner, Button, Card, Form, Frame, Layout, Page, Stack } from "@shopify/polaris";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
@@ -60,10 +51,7 @@ export default function Create() {
       </Head>
       <>
         <Frame>
-          <Page
-            title={`Product Recommendation Quiz Machine - Create a Quiz`}
-            divider
-          >
+          <Page title={`Product Recommendation Quiz Machine - Create a Quiz`} divider>
             <Layout>
               <Layout.Section>
                 <Stack vertical>
@@ -74,21 +62,10 @@ export default function Create() {
                   <Stack.Item>
                     <Card sectioned title="Create New Quiz">
                       <Form onSubmit={handleSaveNewQuiz}>
-                        <QuizTitle
-                          title={title}
-                          handleChangeTitle={handleChangeTitle}
-                        />
-                        <BodyText
-                          body={body}
-                          handleChangeBody={handleChangeBody}
-                        />
+                        <QuizTitle title={title} handleChangeTitle={handleChangeTitle} />
+                        <BodyText body={body} handleChangeBody={handleChangeBody} />
                         <br />
-                        <Button
-                          primary
-                          submit
-                          disabled={isSubmittingNewQuiz || createdQuiz}
-                          loading={isSubmittingNewQuiz}
-                        >
+                        <Button primary submit disabled={isSubmittingNewQuiz || createdQuiz} loading={isSubmittingNewQuiz}>
                           {createdQuiz ? "✔️ Quiz created" : "Create Quiz"}
                         </Button>
                         {error && !createdQuiz && (
@@ -104,15 +81,7 @@ export default function Create() {
 
               <CreateQuestions quiz={createdQuiz} />
               <Layout.Section>
-                {createdQuiz && (
-                  <Button
-                    onClick={() =>
-                      router.push(`/quiz/answers/${createdQuiz.id}`)
-                    }
-                  >
-                    Add answers
-                  </Button>
-                )}
+                {createdQuiz && <Button onClick={() => router.push(`/quiz/answers/${createdQuiz.id}`)}>Add answers</Button>}
               </Layout.Section>
             </Layout>
           </Page>

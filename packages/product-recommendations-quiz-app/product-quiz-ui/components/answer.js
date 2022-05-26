@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import { Layout, Stack, TextField } from "@shopify/polaris";
 
-export const Answer = ({
-  updateAnswer,
-  question,
-  answer,
-  _id,
-}) => {
+export const Answer = ({ updateAnswer, question, answer, _id }) => {
   // Text
   const [text, setText] = useState(answer.text);
   const handleChangeText = (value) => {
@@ -31,14 +26,7 @@ export const Answer = ({
   return (
     <Layout.Section>
       <Stack>
-        <TextField
-          label="Text"
-          value={text}
-          onChange={handleChangeText}
-          type="text"
-          requiredIndicator
-          placeholder="Text"
-        />
+        <TextField label="Text" value={text} onChange={handleChangeText} type="text" requiredIndicator placeholder="Text" />
         <TextField
           requiredIndicator
           step={1}

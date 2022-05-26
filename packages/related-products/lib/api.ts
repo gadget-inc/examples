@@ -1,8 +1,8 @@
 import { Client } from "@gadget-client/related-products-example";
 
 /**
-  * To test using public key: gsk-T3QgryDwWaxQd9gNEigXRbrTaL3pKyxE
-  */
+ * To test using public key: gsk-T3QgryDwWaxQd9gNEigXRbrTaL3pKyxE
+ */
 export const api = new Client({
   authenticationMode: {
     apiKey: process.env.API_KEY,

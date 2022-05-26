@@ -1,12 +1,7 @@
 import { Layout } from "@shopify/polaris";
 import { Answer } from "./Answer.js";
 
-export const AnswersList = ({
-  updateAnswer,
-  question,
-  answers,
-  removeAnswer,
-}) => {
+export const AnswersList = ({ updateAnswer, question, answers, removeAnswer }) => {
   return (
     <Layout.Section>
       {answers.map((answer) => {

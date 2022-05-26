@@ -11,7 +11,7 @@ const webpack = require("webpack");
 module.exports = {
   nextConfig,
   webpack(config) {
-    config.plugins.push(new webpack.EnvironmentPlugin({API_KEY: process.env.API_KEY}));
+    config.plugins.push(new webpack.EnvironmentPlugin({ API_KEY: process.env.API_KEY }));
     return config;
   },
 };

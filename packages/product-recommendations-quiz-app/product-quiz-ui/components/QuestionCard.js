@@ -1,9 +1,4 @@
-import {
-  Button,
-  Card,
-  Layout,
-  FormLayout
-} from "@shopify/polaris";
+import { Button, Card, Layout, FormLayout } from "@shopify/polaris";
 import { useState } from "react";
 import _ from "lodash";
 
@@ -20,15 +15,15 @@ export const QuestionCard = ({ question, responseAnswers }) => {
                 <Card title={a.node.text} key={a.node.id}>
                   <Layout.Section>
                     <Button
-                    primary
-                    onClick={(event) => {
+                      primary
+                      onClick={(event) => {
                         event.preventDefault();
                         responseAnswers.push(a);
                         setCollapseCategory(true);
                         return responseAnswers;
-                    }}
+                      }}
                     >
-                    Select
+                      Select
                     </Button>
                   </Layout.Section>
                 </Card>

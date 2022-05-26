@@ -1,9 +1,4 @@
-import {
-  Card,
-  Caption,
-  Layout,
-  TextField,
-} from "@shopify/polaris";
+import { Card, Caption, Layout, TextField } from "@shopify/polaris";
 
 export const QuizTitle = ({ title, handleChangeTitle, disabled = false }) => {
   return (
@@ -20,8 +15,7 @@ export const QuizTitle = ({ title, handleChangeTitle, disabled = false }) => {
             placeholder="Quiz title"
             type="text"
             id="titleChangeField"
-          >
-          </TextField>
+          ></TextField>
         </Layout.Section>
       </Layout>
     </Card>
