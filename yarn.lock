@@ -1683,14 +1683,14 @@
   dependencies:
     "@gadgetinc/api-client-core" "^0.4.4"
 
-"@gadget-client/simple-blog-example@^1.163.0":
-  version "1.163.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/645/644/223#80cb0b1a5e648ae16b16440df96997f5752ce2fb"
-  integrity sha1-gMsLGl5kiuFrFkQN+WmX9XUs4vs=
+"@gadget-client/simple-blog-example@^1.57.0":
+  version "1.57.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/2757/4339/571#39d3a39aa3da0ac1474922260842606d66f20f27"
+  integrity sha1-OdOjmqPaCsFHSSImCEJgbWbyDyc=
   dependencies:
-    "@gadgetinc/api-client-core" "0.4.5"
+    "@gadgetinc/api-client-core" "0.6.8"
 
-"@gadgetinc/api-client-core@0.4.10", "@gadgetinc/api-client-core@0.4.5", "@gadgetinc/api-client-core@0.4.6", "@gadgetinc/api-client-core@^0.4", "@gadgetinc/api-client-core@^0.4.4":
+"@gadgetinc/api-client-core@0.4.10", "@gadgetinc/api-client-core@0.4.6", "@gadgetinc/api-client-core@0.6.8", "@gadgetinc/api-client-core@^0.4", "@gadgetinc/api-client-core@^0.4.4":
   version "0.4.6"
   resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.4.6.tgz#bad4a4422062c5729aa9458c5269a522432f05cf"
   integrity sha512-bfrcqTchMpnCDoF0vUaWklVM8WYkLU2uhP4DWGBrvihy2uznymf/Jmd+Ymo7rX850iaWAO8+d9Lkxj4sHRyRGQ==

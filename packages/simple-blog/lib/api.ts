@@ -1,3 +1,10 @@
 import { Client } from "@gadget-client/simple-blog-example";
 
-export const api = new Client();
+/**
+ * To test using public key: gsk-fe7X4gHDWdpJtPDqfeL8wGqWMziYCcFf
+ */
+export const api = new Client({
+  authenticationMode: {
+    apiKey: process.env.API_KEY,
+  },
+});
