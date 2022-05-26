@@ -37,9 +37,7 @@ export const QuizList = () => {
             <p>{quiz.body || "No description set"}</p>
           </Stack.Item>
           <Stack.Item>
-            <Button onClick={() => router.push(`/quiz/view/${quiz.id}`)}>
-              View
-            </Button>
+            <Button onClick={() => router.push(`/quiz/view/${quiz.id}`)}>View</Button>
           </Stack.Item>
           <Stack.Item>
             <Button
@@ -57,15 +55,11 @@ export const QuizList = () => {
                       ...deleteErrorMessage.filter((m) => m.id !== quiz.id),
                       {
                         id: quiz.id,
-                        message: Object.keys(error)
-                          ? JSON.stringify(error)
-                          : error,
+                        message: Object.keys(error) ? JSON.stringify(error) : error,
                       },
                     ]);
                   })
-                  .finally(() =>
-                    setIsDeleting(isDeleting.filter((d) => d !== quiz.id))
-                  );
+                  .finally(() => setIsDeleting(isDeleting.filter((d) => d !== quiz.id)));
               }}
             >
               Delete

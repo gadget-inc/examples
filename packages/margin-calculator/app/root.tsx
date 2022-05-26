@@ -1,16 +1,9 @@
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "remix";
-import type { MetaFunction } from "remix";
+import { Provider } from "@gadgetinc/react";
+import { AppProvider } from "@shopify/polaris";
 import styles from "@shopify/polaris/build/esm/styles.css";
 import enTranslations from "@shopify/polaris/locales/en.json";
-import { AppProvider } from "@shopify/polaris";
-import { Provider } from "@gadgetinc/react";
+import type { MetaFunction } from "remix";
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "remix";
 import { api } from "./api";
 
 export const meta: MetaFunction = () => {

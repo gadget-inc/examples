@@ -123,10 +123,7 @@ export default function Mapping() {
         <Layout.Section>
           {currentResults && (
             <Card title={`Map answers to results for the ${quizTitle} quiz.`}>
-              <CreateResultMappings
-                currentResults={currentResults}
-                currentQuiz={currentQuiz}
-              />
+              <CreateResultMappings currentResults={currentResults} currentQuiz={currentQuiz} />
             </Card>
           )}
         </Layout.Section>
@@ -142,11 +139,7 @@ export default function Mapping() {
             <Card title={`View completed quiz`}>
               <Layout.Section>
                 <Stack>
-                  <Button
-                    onClick={() => router.push(`/quiz/view/${currentQuiz.id}`)}
-                  >
-                    View quiz
-                  </Button>
+                  <Button onClick={() => router.push(`/quiz/view/${currentQuiz.id}`)}>View quiz</Button>
                 </Stack>
               </Layout.Section>
             </Card>

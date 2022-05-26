@@ -10,11 +10,7 @@ export default function Home() {
       </Head>
       <>
         <Frame>
-          <Page
-            title={`Product Recommendation Quiz Machine`}
-            divider
-            primaryAction={{ content: "Make a new quiz", url: "/quiz/create" }}
-          >
+          <Page title={`Product Recommendation Quiz Machine`} divider primaryAction={{ content: "Make a new quiz", url: "/quiz/create" }}>
             <Layout>
               <Layout.Section>
                 <Stack vertical>

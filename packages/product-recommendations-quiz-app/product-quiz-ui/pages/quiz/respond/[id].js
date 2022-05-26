@@ -67,16 +67,13 @@ export default function Respond() {
       },
     },
   });
-  const [_createResponseActionResult, createResponse] = useAction(
-    api.response.create,
-    {
-      select: {
-        id: true,
-        conversionState: true,
-        answers: { edges: { node: { id: true, result: { id: true } } } },
-      },
-    }
-  );
+  const [_createResponseActionResult, createResponse] = useAction(api.response.create, {
+    select: {
+      id: true,
+      conversionState: true,
+      answers: { edges: { node: { id: true, result: { id: true } } } },
+    },
+  });
 
   const [createdResponse, setCreatedResponse] = useState(null);
 
@@ -199,25 +196,19 @@ export default function Respond() {
                       createdResponse.conversionState == "in progress" &&
                       questions.map((q) => {
                         return (
-                          <QuestionCard
-                            key={q.node.id}
-                            question={q.node}
-                            response={createdResponse}
-                            responseAnswers={responseAnswers}
-                          />
+                          <QuestionCard key={q.node.id} question={q.node} response={createdResponse} responseAnswers={responseAnswers} />
                         );
                       })}
                     <Stack.Item>
-                      {createdResponse &&
-                        createdResponse.conversionState == "in progress" && (
-                          <Card title={`Submit Quiz`}>
-                            <Layout.Section>
-                              <Button onClick={handleResponseSubmitted} primary>
-                                Get my result!
-                              </Button>
-                            </Layout.Section>
-                          </Card>
-                        )}
+                      {createdResponse && createdResponse.conversionState == "in progress" && (
+                        <Card title={`Submit Quiz`}>
+                          <Layout.Section>
+                            <Button onClick={handleResponseSubmitted} primary>
+                              Get my result!
+                            </Button>
+                          </Layout.Section>
+                        </Card>
+                      )}
                     </Stack.Item>
                   </Stack>
                 </Layout.Section>

@@ -72,11 +72,7 @@ export default function View() {
         </Head>
         <>
           <Frame>
-            <Page
-              title={currentQuiz.title}
-              divider
-              primaryAction={{ content: "Take the quiz!", url: responseUrl }}
-            >
+            <Page title={currentQuiz.title} divider primaryAction={{ content: "Take the quiz!", url: responseUrl }}>
               <Layout>
                 <Layout.Section>
                   <Stack vertical>

@@ -1,29 +1,18 @@
-import {
-  Layout,
-  Select,
-  Stack,
-  TextField,
-} from "@shopify/polaris";
+import { Layout, Select, Stack, TextField } from "@shopify/polaris";
 import { useState, useEffect } from "react";
 
-export const QuizResultsForm = ({
-  updateQuizResult,
-  result,
-  quiz,
-  products,
-  _id,
-}) => {
+export const QuizResultsForm = ({ updateQuizResult, result, quiz, products, _id }) => {
   // Body
   const [body, setBody] = useState(result.body);
   const handleChangeBody = (value) => {
-      setBody(value);
-    };
+    setBody(value);
+  };
 
   // Image URL
   const [imageUrl, setImageUrl] = useState(result.imageUrl);
   const handleChangeImageUrl = (value) => {
-      setImageUrl(value);
-    };
+    setImageUrl(value);
+  };
 
   // Products
   products.flatMap((p) => {
@@ -43,8 +32,8 @@ export const QuizResultsForm = ({
 
   const [productSuggestion, setProductSuggestion] = useState();
   const handleChangeProductSuggestion = (value) => {
-      setProductSuggestion(value);
-    };
+    setProductSuggestion(value);
+  };
 
   useEffect(() => {
     updateQuizResult({
@@ -59,21 +48,8 @@ export const QuizResultsForm = ({
   return (
     <Layout.Section>
       <Stack>
-        <TextField
-          label="Body text"
-          value={body}
-          requiredIndicator
-          onChange={handleChangeBody}
-          type="text"
-          placeholder="Body Text"
-        />
-        <TextField
-          label="Image URL (optional)"
-          value={imageUrl}
-          onChange={handleChangeImageUrl}
-          type="text"
-          placeholder="Image Url"
-        />
+        <TextField label="Body text" value={body} requiredIndicator onChange={handleChangeBody} type="text" placeholder="Body Text" />
+        <TextField label="Image URL (optional)" value={imageUrl} onChange={handleChangeImageUrl} type="text" placeholder="Image Url" />
         <Select
           label="Shopify Product to Recommend"
           placeholder="Product"

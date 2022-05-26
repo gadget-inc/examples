@@ -20,7 +20,8 @@
     "packages/simple-blog",
     "packages/apollo-blog",
     "packages/file-upload",
-    "packages/margin-calculator"
+    "packages/margin-calculator",
+    "packages/product-recommendations-quiz-app/product-quiz-ui"
   ],
   "dependencies": {
     "@gadgetinc/eslint-config": "^0.4.0",

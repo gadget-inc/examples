@@ -14,11 +14,7 @@ export const ResultMappingForm = ({ quizResult, quiz }) => {
 
   const [selectedAnswer, setSelectedAnswer] = useState([]);
   const handleChangeSelectedAnswer = (value) => {
-    if (
-      selectedAnswers.filter(
-        (a) => a != value && selectedAnswers.length <= questions.length
-      )
-    ) {
+    if (selectedAnswers.filter((a) => a != value && selectedAnswers.length <= questions.length)) {
       setSelectedAnswers([...selectedAnswers, value]);
       setSelectedAnswer(value);
     }
@@ -127,22 +123,14 @@ export const ResultMappingForm = ({ quizResult, quiz }) => {
               })}
             <Card title={`Submit mapping?`}>
               <Layout.Section>
-                <Button
-                  onClick={handleSubmitMapping}
-                  disabled={!quizResult || isSubmitting}
-                  loading={isSubmitting}
-                >
+                <Button onClick={handleSubmitMapping} disabled={!quizResult || isSubmitting} loading={isSubmitting}>
                   Save mapping
                 </Button>
               </Layout.Section>
             </Card>
             <Card title={`Delete result?`}>
               <Layout.Section>
-                <Button
-                  onClick={deleteResult}
-                  disabled={!quizResult || isSubmitting}
-                  loading={isSubmitting}
-                >
+                <Button onClick={deleteResult} disabled={!quizResult || isSubmitting} loading={isSubmitting}>
                   Delete
                 </Button>
               </Layout.Section>

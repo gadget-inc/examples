@@ -15,13 +15,7 @@ export const CreateQuestions = ({ quiz }) => {
   };
 
   const updateQuestion = (updatedQuestion) => {
-    if (
-      !(
-        updatedQuestion.title &&
-        updatedQuestion.sequence &&
-        updatedQuestion._id
-      )
-    ) {
+    if (!(updatedQuestion.title && updatedQuestion.sequence && updatedQuestion._id)) {
       return;
     }
 
@@ -87,9 +81,7 @@ export const CreateQuestions = ({ quiz }) => {
         {!quiz && (
           <Layout.Section fullWidth>
             <Banner status="warning" title="Quiz not saved.">
-              <p>
-                Questions cannot be created before the quiz has been created.
-              </p>
+              <p>Questions cannot be created before the quiz has been created.</p>
             </Banner>
           </Layout.Section>
         )}
@@ -136,12 +128,7 @@ export const CreateQuestions = ({ quiz }) => {
         </Layout.Section>
         <Layout.Section>
           <Form onSubmit={handleSubmitQuestions}>
-            <Button
-              submit
-              disabled={!quiz || isSubmitting}
-              primary
-              loading={isSubmitting}
-            >
+            <Button submit disabled={!quiz || isSubmitting} primary loading={isSubmitting}>
               Save Questions
             </Button>
           </Form>

@@ -14,13 +14,7 @@ export const CreateResults = ({ quiz, products }) => {
   };
 
   const updateQuizResult = (updatedQuizResult) => {
-    if (
-      !(
-        updatedQuizResult.body &&
-        updatedQuizResult.quiz &&
-        updatedQuizResult._id
-      )
-    ) {
+    if (!(updatedQuizResult.body && updatedQuizResult.quiz && updatedQuizResult._id)) {
       return;
     }
 
@@ -133,12 +127,7 @@ export const CreateResults = ({ quiz, products }) => {
           )}
         </Layout.Section>
         <Layout.Section>
-          <Button
-            onClick={handleSubmitQuizResults}
-            disabled={!quiz || isSubmitting}
-            primary
-            loading={isSubmitting}
-          >
+          <Button onClick={handleSubmitQuizResults} disabled={!quiz || isSubmitting} primary loading={isSubmitting}>
             Save Results
           </Button>
         </Layout.Section>

@@ -46,29 +46,17 @@ export default function Answers() {
     return (
       <Layout>
         <Layout.Section>
-          <Card
-            title={`Add answers to questions for the ` + quizTitle + ` quiz.`}
-          >
+          <Card title={`Add answers to questions for the ` + quizTitle + ` quiz.`}>
             {currentQuiz &&
               currentQuestions.map((q) => {
-                return (
-                  <QuestionAnswerForm
-                    key={q.node.id}
-                    question={q.node}
-                    refresh={refresh}
-                  />
-                );
+                return <QuestionAnswerForm key={q.node.id} question={q.node} refresh={refresh} />;
               })}
           </Card>
         </Layout.Section>
         <Layout.Section>
           <Card title={"Add results and map quiz"}>
             <Stack>
-              <Button
-                onClick={() => router.push(`/quiz/mapping/${currentQuiz.id}`)}
-              >
-                On to adding results!
-              </Button>
+              <Button onClick={() => router.push(`/quiz/mapping/${currentQuiz.id}`)}>On to adding results!</Button>
             </Stack>
           </Card>
         </Layout.Section>
