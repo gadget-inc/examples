@@ -45,7 +45,7 @@ const ShippingCostSetter = (props: { order: Select<ShopifyDraftOrder, { id: true
         <div style={{ margin: "2em 2em 1em 2em" }}>
           <Form
             onSubmit={() => {
-              saveDraftOrder({
+              void saveDraftOrder({
                 id: props.order.id,
                 shopifyDraftOrder: {
                   shippingCost: String(parseFloat(shippingCost) * 100),
@@ -152,8 +152,8 @@ export default function Order() {
   let taxes = Dinero({ amount: 0, currency: "USD" });
   let beforeTaxCost = Dinero({ amount: 0, currency: "USD" });
   let beforeTaxPrice = Dinero({ amount: 0, currency: "USD" });
-  let lineItemCosts: Dinero.Dinero[] = [];
-  let lineItemPrices: Dinero.Dinero[] = [];
+  const lineItemCosts: Dinero.Dinero[] = [];
+  const lineItemPrices: Dinero.Dinero[] = [];
 
   if (data) {
     for (const [index, { node }] of data.lineItems.edges.entries()) {
