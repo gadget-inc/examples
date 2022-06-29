@@ -5,7 +5,6 @@ import Uppy from "@uppy/core";
 import "@uppy/core/dist/style.css";
 import "@uppy/dashboard/dist/style.css";
 import { Dashboard } from "@uppy/react";
-import Webcam from "@uppy/webcam";
 import type { NextPage } from "next";
 import React, { useMemo, useState } from "react";
 import { api } from "../lib/api";
@@ -22,7 +21,6 @@ const UploadForm = () => {
       restrictions: { maxNumberOfFiles: 1 },
       autoProceed: true,
     });
-    uppy.use(Webcam);
     uppy.use(AwsS3, {
       limit: 1,
       async getUploadParameters(file: Record<string, any>) {
