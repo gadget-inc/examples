@@ -12,7 +12,10 @@ export const ExampleContainer = (props: { children: ReactNode }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex direction="row" style={{ gap: "16px" }}>
-        <Link href="/">Simple</Link> <Link href="/direct">Direct</Link> <Link href="/uppy">Direct with Uppy</Link>
+        <Link href="/">Simple</Link>
+        <Link href="/direct">Direct</Link>
+        <Link href="/direct-dropzone">Direct with react-dropzone</Link>
+        <Link href="/uppy">Direct with Uppy</Link>
       </Flex>
 
       <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" flexGrow={1} padding={4}>

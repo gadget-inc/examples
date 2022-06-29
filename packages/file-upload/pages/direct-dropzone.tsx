@@ -1,52 +1,48 @@
-import { Alert, AlertIcon, Box, Button, FormControl, FormLabel, Heading, Image, Input } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
+import { Alert, AlertIcon, Box, Button, FormControl, FormLabel, Heading, IconButton, Image, Input, Spinner } from "@chakra-ui/react";
 import { useAction } from "@gadgetinc/react";
 import type { NextPage } from "next";
 import React, { useState } from "react";
+import { useDropzone } from "react-dropzone";
 import { api } from "../lib/api";
 import { ExampleContainer } from "../lib/ExampleContainer";
 
-function Uploader(props: { onFileTokenChange: (token: string, fileName: string) => void }) {
-  const [isUploading, setIsUploading] = useState(false);
-  const [fileName, setFileName] = useState<string | null>(null);
-
-  return (
-    <Box
-      padding="10"
-      minWidth="300px"
-      onDragOver={(event) => event.preventDefault()}
-      onDrop={async (event) => {
-        event.preventDefault();
-        const file = event.dataTransfer.files[0];
-        // send the file to cloud storage
-        setIsUploading(true);
-
-        const { url, token } = await api.getDirectUploadToken();
-
-        try {
-          await fetch(url, {
-            method: "PUT",
-            headers: {
-              "Content-Type": file.type,
-            },
-            body: file,
-          });
-          // once it has been uploaded, give the parent component the token to submit with the other data in the form
-          props.onFileTokenChange(token, file.name);
-          setFileName(file.name);
-        } finally {
-          setIsUploading(false);
-        }
-      }}
-    >
-      {isUploading ? "Uploading ..." : fileName ? fileName : "Drop a file here"}
-    </Box>
-  );
-}
-
 const UploadForm = () => {
   const [name, setName] = useState("");
+  const [inputFile, setInputFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
   const [fileToken, setFileToken] = useState<string | null>(null);
-  const [fileName, setFileName] = useState<string | null>(null);
+  const [fileName, setFileName] = useState("");
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop: async (files) => {
+      const inputFile = files[0];
+
+      // capture a reference to the input file to display it in the UI
+      setInputFile(inputFile);
+
+      // instead of just storing a reference to the file that was dropped, we immediately start uploading it to cloud storage while the user fills out the rest of the form
+      const { url, token } = await api.getDirectUploadToken();
+
+      // send the file to cloud storage
+      setUploading(true);
+
+      try {
+        await fetch(url, {
+          method: "PUT",
+          headers: {
+            "Content-Type": files[0].type,
+          },
+          body: files[0],
+        });
+        // once it has been uploaded, set all the data we need to then send the action mutation
+        setFileToken(token);
+        setFileName(files[0].name);
+      } finally {
+        setUploading(false);
+      }
+    },
+  });
 
   const [{ data, error, fetching }, saveImage] = useAction(api.image.create, {
     select: {
@@ -88,15 +84,20 @@ const UploadForm = () => {
           </FormControl>
           <FormControl id="file" padding="2">
             <FormLabel>File</FormLabel>
-            <Uploader
-              onFileTokenChange={(token, fileName) => {
-                setFileToken(token);
-                setFileName(fileName);
-              }}
-            />
+            {inputFile && (
+              <p>
+                {inputFile.name} <IconButton aria-label="Clear" icon={<CloseIcon />} /> {uploading && <Spinner />}
+              </p>
+            )}
+            {!inputFile && (
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                {isDragActive ? <p>Drop the files here ...</p> : <p>Drop some files here, or click to select files</p>}
+              </div>
+            )}
           </FormControl>
           <Box paddingTop="6">
-            <Button type="submit" colorScheme="blue" disabled={fetching}>
+            <Button type="submit" colorScheme="blue" disabled={fetching || uploading}>
               Submit
             </Button>
           </Box>
@@ -115,7 +116,7 @@ const UploadForm = () => {
   );
 };
 
-const SimpleDirect: NextPage = () => {
+const Direct: NextPage = () => {
   return (
     <ExampleContainer>
       <UploadForm />
@@ -123,4 +124,4 @@ const SimpleDirect: NextPage = () => {
   );
 };
 
-export default SimpleDirect;
+export default Direct;
