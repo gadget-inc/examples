@@ -1,7 +1,7 @@
 import { useFindOne } from "@gadgetinc/react";
 import { Button, Card, Layout, Stack } from "@shopify/polaris";
 import { useRouter } from "next/router";
-import { QuestionAnswerForm } from "../../../components/questionAnswerForm.js";
+import { QuestionAnswerForm } from "../../../components/QuestionAnswerForm.js";
 import { api } from "./../../../api.js";
 
 export default function Answers() {
