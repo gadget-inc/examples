@@ -13,7 +13,7 @@
     "@chakra-ui/react": "^1.7.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@gadgetinc/react": "^0.2.2",
+    "@gadgetinc/react": "^0.5.0",
     "chakra-theme": "*",
     "chakra-ui-autocomplete": "^1.4.5",
     "chakra-ui-markdown-renderer": "^4.0.0",
