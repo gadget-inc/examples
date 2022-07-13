@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.5",
+    "@apollo/client": "^3.6.9",
     "@chakra-ui/react": "^1.7.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
