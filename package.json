@@ -38,6 +38,7 @@
     "esbuild-dev": "^0.9.1"
   },
   "resolutions": {
-    "@gadgetinc/api-client-core": "0.4.6"
+    "@gadgetinc/api-client-core": "0.7.0",
+    "@types/react": "^17.0.38"
   }
 }

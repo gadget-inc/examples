@@ -2472,63 +2472,64 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@gadget-client/alida-quiz-app-2@^1.164.0":
-  version "1.2526.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/2222/3269/529#c8e6dadfaebb4bd388ae401853d30b8675e8a754"
-  integrity sha1-yOba3667S9OIrkAYU9MLhnXop1Q=
+"@gadget-client/alida-quiz-app-2@^1.2532.0":
+  version "1.2532.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/2222/3269/831#034b0322b2226a57c13000432c01000550f065e3"
+  integrity sha1-A0sDIrIialfBMABDLAEABVDwZeM=
   dependencies:
-    "@gadgetinc/api-client-core" "0.6.5"
+    "@gadgetinc/api-client-core" "0.7.0"
 
-"@gadget-client/files-example@^*":
-  version "1.16.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/1473/1771/227#763969b58789554a47e9bf6e7c7935b927791c9c"
-  integrity sha1-djlptYeJVUpH6b9ufHk1uSd5HJw=
+"@gadget-client/files-example@^1.44.0":
+  version "1.44.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/1473/1771/827#3d0388a279f20d7b3f1e1cfce171cdcc91f61fac"
+  integrity sha1-PQOIonnyDXs/Hhz84XHNzJH2H6w=
   dependencies:
-    "@gadgetinc/api-client-core" "0.4.6"
+    "@gadgetinc/api-client-core" "0.7.0"
 
-"@gadget-client/login-logout-example@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/1355/1535/211#fb8ca636f6c429bfd3f7a72ccf404d86beee6b4d"
-  integrity sha1-+4ymNvbEKb/T96csz0BNhr7ua00=
+"@gadget-client/login-logout-example@^1.30.0":
+  version "1.30.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/1355/1535/825#af298ff585e3349f411f947dd4e3e25f355af3fa"
+  integrity sha1-rymP9YXjNJ9BH5R91OPiXzVa8/o=
   dependencies:
-    "@gadgetinc/api-client-core" "^0.4.4"
+    "@gadgetinc/api-client-core" "0.7.0"
 
-"@gadget-client/margin-calculator-example@^1.18.0":
-  version "1.64.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/1792/2409/330#0f154640ed3959376f611b2a0794213b936ae5c2"
-  integrity sha1-DxVGQO05WTdvYRsqB5QhO5Nq5cI=
+"@gadget-client/margin-calculator-example@^1.106.0":
+  version "1.106.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/1792/2409/833#d49f90a6ab8142aa7526f744c8919b085adfa076"
+  integrity sha1-1J+QpquBQqp1JvdEyJGbCFrfoHY=
   dependencies:
-    "@gadgetinc/api-client-core" "0.4.10"
+    "@gadgetinc/api-client-core" "0.7.0"
 
-"@gadget-client/related-products-example@^1.550.0":
-  version "1.550.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/1268/1361/209#3183d1c9b1ea4362855b2ccb577acd670fb8a87d"
-  integrity sha1-MYPRybHqQ2KFWyzLV3rNZw+4qH0=
+"@gadget-client/related-products-example@^1.775.0":
+  version "1.775.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/1268/1361/829#67b9d80d2a2a3034133483cfd51ce6bdba510e94"
+  integrity sha1-Z7nYDSoqMDQTNIPP1RzmvbpRDpQ=
   dependencies:
-    "@gadgetinc/api-client-core" "^0.4.4"
+    "@gadgetinc/api-client-core" "0.7.0"
 
-"@gadget-client/simple-blog-example@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/2757/4339/571#39d3a39aa3da0ac1474922260842606d66f20f27"
-  integrity sha1-OdOjmqPaCsFHSSImCEJgbWbyDyc=
+"@gadget-client/simple-blog-example@^1.59.0":
+  version "1.59.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/2757/4339/835#b94b369526d6b0ecd364002b6ad34396d9ec6f85"
+  integrity sha1-uUs2lSbWsOzTZAAratNDltnsb4U=
   dependencies:
-    "@gadgetinc/api-client-core" "0.6.8"
+    "@gadgetinc/api-client-core" "0.7.0"
 
-"@gadgetinc/api-client-core@0.4.10", "@gadgetinc/api-client-core@0.4.6", "@gadgetinc/api-client-core@0.6.5", "@gadgetinc/api-client-core@0.6.8", "@gadgetinc/api-client-core@^0.4", "@gadgetinc/api-client-core@^0.4.4", "@gadgetinc/api-client-core@^0.5":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.4.6.tgz#bad4a4422062c5729aa9458c5269a522432f05cf"
-  integrity sha512-bfrcqTchMpnCDoF0vUaWklVM8WYkLU2uhP4DWGBrvihy2uznymf/Jmd+Ymo7rX850iaWAO8+d9Lkxj4sHRyRGQ==
+"@gadgetinc/api-client-core@0.7.0", "@gadgetinc/api-client-core@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.7.0.tgz#520e2e98066753db73e4ff9eeb0a5dd59bbae417"
+  integrity sha512-p0YyVZ8S6vphf8toScxL7V8RAN0o5x82fqGkX89A8nrzsT+bntaeW2F4wjP9RNQ3KJmUKvIphW2kETaqH4wesA==
   dependencies:
+    "@opentelemetry/api" "^1.0.4"
     "@urql/core" "^2.1.5"
     "@urql/exchange-multipart-fetch" "^0.1.13"
     cross-fetch "^3.0.6"
-    gql-query-builder "^3.5.5"
+    gql-query-builder "^3.6.0"
     graphql "^15.5.0"
-    graphql-ws "^5.1.2"
+    graphql-ws "^5.5.5"
     isomorphic-ws "^4.0.1"
     lodash.clonedeep "^4.5.0"
     lodash.isequal "^4.5.0"
-    ws "^7.4.6"
+    ws "^8.2.2"
 
 "@gadgetinc/eslint-config@^0.4.0":
   version "0.4.0"
@@ -2556,21 +2557,12 @@
   dependencies:
     prettier-plugin-organize-imports "^1.0.4"
 
-"@gadgetinc/react@^0.2.2", "@gadgetinc/react@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@gadgetinc/react/-/react-0.2.3.tgz#6ba78292581c5e76502f66220df9a388541489a0"
-  integrity sha512-Q5oeL+//V2oe1GdUIu/cqSvfdZbY6hjk0YetMA29p8NrahHsNY/FIvLPk5bHG8wAMQ3eQ6KfCsK5hunpRqxwKQ==
+"@gadgetinc/react@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@gadgetinc/react/-/react-0.5.0.tgz#7b3f3371786cec017e846d4c9b5e1c3a899f4845"
+  integrity sha512-ag16uEHCm6+yDPeZ2gH43LkMzx9Wdf11k65Zpno/uBi26TuT/ZrcpG511qGNNufCmxLAu2q/xXwXvRc3EvSGCA==
   dependencies:
-    "@gadgetinc/api-client-core" "^0.4"
-    deep-equal "^2.0.5"
-    urql "^2.0.5"
-
-"@gadgetinc/react@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@gadgetinc/react/-/react-0.3.1.tgz#36add7653841ee7560843e91378f788b7125c38b"
-  integrity sha512-cMFvkLew6VVAH7snVKeKgqU0vXhijyGTgWjenmbAeTqWT0+jU5ZmwLdJ1MSpWPDwE6LjepjcWCkhOxJUiFCuBQ==
-  dependencies:
-    "@gadgetinc/api-client-core" "^0.5"
+    "@gadgetinc/api-client-core" "^0.7.0"
     deep-equal "^2.0.5"
     urql "^2.0.5"
 
@@ -3011,6 +3003,11 @@
   dependencies:
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
+
+"@opentelemetry/api@^1.0.4":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/api/-/api-1.1.0.tgz#563539048255bbe1a5f4f586a4a10a1bb737f44a"
+  integrity sha512-hf+3bwuBwtXsugA2ULBc95qxrOqP2pOekLz34BJhcAKawt94vfeNyUKpYc0lZQ/3sCP6LqRa7UAdHA7i5UODzQ==
 
 "@popperjs/core@2.4.4":
   version "2.4.4"
@@ -3455,37 +3452,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.19", "@types/react@^17.0.24":
-  version "17.0.38"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.38.tgz#f24249fefd89357d5fa71f739a686b8d7c7202bd"
-  integrity sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@17.0.33":
-  version "17.0.33"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.33.tgz#e01ae3de7613dac1094569880bb3792732203ad5"
-  integrity sha512-pLWntxXpDPaU+RTAuSGWGSEL2FRTNyRQOjSWDke/rxRg14ncsZvx8AKWMWZqvc1UOaJIAoObdZhAWvRaHFi5rw==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^17.0.0":
-  version "17.0.34"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.34.tgz#797b66d359b692e3f19991b6b07e4b0c706c0102"
-  integrity sha512-46FEGrMjc2+8XhHXILr+3+/sTe3OfzSPU9YGKILLrUYbQ1CLQC9Daqo1KzENGXAWwrFwiY0l4ZbF20gRvgpWTg==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^17.0.15":
-  version "17.0.37"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.37.tgz#6884d0aa402605935c397ae689deed115caad959"
-  integrity sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==
+"@types/react@*", "@types/react@17.0.33", "@types/react@^17.0.0", "@types/react@^17.0.15", "@types/react@^17.0.19", "@types/react@^17.0.24", "@types/react@^17.0.38":
+  version "17.0.47"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.47.tgz#4ee71aaf4c5a9e290e03aa4d0d313c5d666b3b78"
+  integrity sha512-mk0BL8zBinf2ozNr3qPnlu1oyVTYq+4V7WA76RgxUAtf0Em/Wbid38KN6n4abEkvO4xMTBWmnP1FtQzgkEiJoA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -6170,10 +6140,10 @@ got@^11.0.0:
     p-cancelable "^2.0.0"
     responselike "^2.0.0"
 
-gql-query-builder@^3.5.5:
-  version "3.5.5"
-  resolved "https://registry.yarnpkg.com/gql-query-builder/-/gql-query-builder-3.5.5.tgz#fd35547c6e99d33d72a1df50478e3efbc600af4f"
-  integrity sha512-ovc2KaLE/e5Wx9+ViWCZhjbGkPw0qxY973NIvw03kDY8PohQTaI3nnG/yH//RjB/Gz5X4QDwp7Nkg1ZqFnSySQ==
+gql-query-builder@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/gql-query-builder/-/gql-query-builder-3.6.0.tgz#e4f17cc26478259b9ac55e5505f3a6239a64e9c6"
+  integrity sha512-++OiouUz5OQDgNVY/rmfNfud/uTZUQV961b9Zp9IBq5B+PIJb2Y3iq3iaZchAtjg5h31x646zZYT18BlgQQAjQ==
 
 graceful-fs@^4.1.2, graceful-fs@^4.2.4:
   version "4.2.8"
@@ -6192,10 +6162,10 @@ graphql-tag@^2.12.3:
   dependencies:
     tslib "^2.1.0"
 
-graphql-ws@^5.1.2:
-  version "5.5.5"
-  resolved "https://registry.yarnpkg.com/graphql-ws/-/graphql-ws-5.5.5.tgz#f375486d3f196e2a2527b503644693ae3a8670a9"
-  integrity sha512-hvyIS71vs4Tu/yUYHPvGXsTgo0t3arU820+lT5VjZS2go0ewp2LqyCgxEN56CzOG7Iys52eRhHBiD1gGRdiQtw==
+graphql-ws@^5.5.5:
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/graphql-ws/-/graphql-ws-5.9.1.tgz#9c0fa48ceb695d61d574ed3ab21b426729e87f2d"
+  integrity sha512-mL/SWGBwIT9Meq0NlfS55yXXTOeWPMbK7bZBEZhFu46bcGk1coTx2Sdtzxdk+9yHWngD+Fk1PZDWaAutQa9tpw==
 
 graphql@^15.5.0:
   version "15.7.2"
@@ -10398,6 +10368,11 @@ ws@^7.4.6:
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.5.tgz#8b4bc4af518cfabd0473ae4f99144287b33eb881"
   integrity sha512-BAkMFcAzl8as1G/hArkxOxq3G7pjUqQ3gzYbLL0/5zNkph70e+lCoxBGnm6AW1+/aiNeV4fnKqZ8m4GZewmH2w==
 
+ws@^8.2.2:
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.0.tgz#8e71c75e2f6348dbf8d78005107297056cb77769"
+  integrity sha512-JDAgSYQ1ksuwqfChJusw1LSJ8BizJ2e/vVu5Lxjq3YvNJNlROv1ui4i+c/kUUrPheBvQl4c5UbERhTwKa6QBJQ==
+
 xdm@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/xdm/-/xdm-2.1.0.tgz#d0060eb0f1230b47247bc6b3208ca3965d0053a4"
@@ -10477,11 +10452,6 @@ yargs@^16.2.0:
     string-width "^4.2.0"
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
-
-yarn@^1.22.18:
-  version "1.22.18"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.18.tgz#05b822ade8c672987bab8858635145da0850f78a"
-  integrity sha512-oFffv6Jp2+BTUBItzx1Z0dpikTX+raRdqupfqzeMKnoh7WD6RuPAxcqDkMUy9vafJkrB0YaV708znpuMhEBKGQ==
 
 yocto-queue@^0.1.0:
   version "0.1.0"
