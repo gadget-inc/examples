@@ -4,7 +4,7 @@
   "private": true,
   "main": "index.ts",
   "dependencies": {
-    "@chakra-ui/react": "^1.6.10",
+    "@chakra-ui/react": "^1.8.8",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
