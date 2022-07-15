@@ -97,4 +97,8 @@ To learn more about Next.js, take a look at the following resources:
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new). Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fgadget-inc%2Fexamples%2Ftree%2Fmain%2Fpackages%2Fnextjs-shopify&env=NEXT_PUBLIC_SHOPIFY_API_KEY&envDescription=Shopify%20App%20API%20Key%20from%20the%20Partners%20dashboard%20or%20the%20Shopify%20Admin%2C%20matching%20the%20key%20used%20for%20the%20Gadget%20Shopify%20Connection&project-name=nextjs-gadget-shopify-app&repo-name=nextjs-gadget-shopify-app)
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
