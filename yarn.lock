@@ -2739,12 +2739,13 @@
     node-fetch "^2.6.1"
     source-map "^0.7.3"
 
-"@remix-run/react@^1.1.1":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@remix-run/react/-/react-1.1.3.tgz#a65b7e2448645e66973faef01fc1735363aba029"
-  integrity sha512-1vYwRi4qQGJLByZR15o47TRZ3/xT3+vhM97UCPJPu4GtzbPldNYLuQlVmAzWWjGuQmSqmwWv818U/+U7rke18g==
+"@remix-run/react@^1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@remix-run/react/-/react-1.6.4.tgz#a939d8d604e0639f20ecd4177347a6943757ebdc"
+  integrity sha512-Ai05U2pZqAqd4buvomKRJM32u34qmb7W7dZCxUYMV+6+CkYddxOjnrFcnG/KyRSqmJ12O8UWAspJCvkfbZVW5w==
   dependencies:
-    react-router-dom "^6.2.1"
+    history "^5.3.0"
+    react-router-dom "^6.2.2"
 
 "@remix-run/serve@^1.1.1":
   version "1.1.3"
@@ -5912,6 +5913,13 @@ history@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/history/-/history-5.2.0.tgz#7cdd31cf9bac3c5d31f09c231c9928fad0007b7c"
   integrity sha512-uPSF6lAJb3nSePJ43hN3eKj1dTWpN9gMod0ZssbFTIsen+WehTmEadgL+kg78xLJFdRfrrC//SavDzmRVdE+Ig==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+
+history@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/history/-/history-5.3.0.tgz#1548abaa245ba47992f063a0783db91ef201c73b"
+  integrity sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==
   dependencies:
     "@babel/runtime" "^7.7.6"
 
