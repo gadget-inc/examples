@@ -2981,11 +2981,6 @@
   dependencies:
     base64url "^3.0.1"
 
-"@shopify/polaris-icons@^4.23.0":
-  version "4.23.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-4.23.0.tgz#dc1067460ff5497267990fd66debb78c512aa219"
-  integrity sha512-70iT2GNXVASA7jPtuKTsPKoq82Ws/x9Nu1sGuTnvchQpeltFG9oJEu/1r9AuTS05dQoM6fivnOCxZGy5XnCFqw==
-
 "@shopify/polaris-icons@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-5.2.0.tgz#650b50ca34278429b570b65b1080833b8ac32cc4"
