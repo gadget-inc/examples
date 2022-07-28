@@ -11,7 +11,7 @@
   "dependencies": {
     "@gadget-client/alida-quiz-app-2": "^1.2532.0",
     "@gadgetinc/react": "^0.5.0",
-    "@shopify/polaris": "^9.3.0",
+    "@shopify/polaris": "^9.21.1",
     "dotenv": "^16.0.0",
     "lodash": "^4.17.21",
     "next": "^12.1.0",
