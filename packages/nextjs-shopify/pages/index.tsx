@@ -43,14 +43,13 @@ const Home: NextPage = () => {
         {!loading &&
           data.map((customer) => (
             <Card key={customer.id}>
-              {customer.name}
+              {customer.firstName} {customer.lastName}
               <Button
-                onClick={(event) => {
-                  event.preventDefault();
+                onClick={() => {
                   void deleteCustomer({ id: customer.id }).then(() => refresh());
                 }}
               >
-                Delete {customer.name}
+                Delete {customer.firstName!}
               </Button>
             </Card>
           ))}

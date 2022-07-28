@@ -1,15 +1,16 @@
 {
-  "name": "example-shopify-public",
+  "name": "nextjs-shopify",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001 & local-ssl-proxy --source 443 --target 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@gadget-client/public-test": "^1.16.0",
+    "@gadget-client/public-test": "^1.37.0",
     "@gadgetinc/react": "^0.5.0",
     "@gadgetinc/react-shopify-app-bridge": "^0.2.1",
     "@shopify/app-bridge-react": "^3.1.1",
