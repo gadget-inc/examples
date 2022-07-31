@@ -13,7 +13,7 @@
   "dependencies": {
     "@gadget-client/margin-calculator-example": "^1.106.0",
     "@gadgetinc/react": "^0.5.0",
-    "@remix-run/react": "^1.1.1",
+    "@remix-run/react": "^1.6.7",
     "@remix-run/serve": "^1.1.1",
     "@shopify/polaris": "^9.21.1",
     "@shopify/polaris-icons": "^4.23.0",
