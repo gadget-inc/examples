@@ -22,7 +22,8 @@
     "packages/file-upload",
     "packages/margin-calculator",
     "packages/product-recommendations-quiz-app/product-quiz-ui",
-    "packages/nextjs-shopify"
+    "packages/nextjs-shopify",
+    "packages/shopify-cli-embedded-app"
   ],
   "dependencies": {
     "@gadgetinc/eslint-config": "^0.4.0",
