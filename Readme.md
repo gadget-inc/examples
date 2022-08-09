@@ -34,6 +34,17 @@ Features used:
 - Gadget authentication system (`User` model)
 - Generated API client (`@gadget-client/simple-blog-example` package) and React bindings (`@gadget-inc/react` package)
 
+## Shopify CLI App
+
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/shopify-cli-embedded)
+
+This app serves as an example of an embedded app built using the Shopify CLI to handle your app frontend, and Gadget's App Bridge module to handle authentication. This app can be used as a template for getting started building Shopify apps using their CLI.
+
+Features used:
+
+- Gadget authentication system (`Session` model and Shopify OAuth management with `@gadgetinc/react-shopify-app-bridge`)
+- Generated API client (`@gadget-client/public-test` package) and React bindings (`@gadget-inc/react` package)
+
 ## Next.js Shopify
 
 [Code](https://github.com/gadget-inc/examples/tree/main/packages/nextjs-shopify)
