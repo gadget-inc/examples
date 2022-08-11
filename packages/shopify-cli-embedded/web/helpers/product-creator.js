@@ -32,7 +32,7 @@ const ADJECTIVES = [
   "frosty",
   "green",
   "long",
-]
+];
 
 const NOUNS = [
   "waterfall",
@@ -66,7 +66,7 @@ const NOUNS = [
   "field",
   "fire",
   "flower",
-]
+];
 
 export const DEFAULT_PRODUCTS_COUNT = 5;
 const CREATE_PRODUCTS_MUTATION = `
@@ -77,7 +77,7 @@ const CREATE_PRODUCTS_MUTATION = `
       }
     }
   }
-`
+`;
 
 export default async function productCreator(session, count = DEFAULT_PRODUCTS_COUNT) {
   const client = new Shopify.Clients.Graphql(session.shop, session.accessToken);
