@@ -2,21 +2,20 @@
 import { useAction, useFindMany } from "@gadgetinc/react";
 // import the Gadget<->Shopify bindings that manage the auth process with Shopify
 import { useGadget } from "@gadgetinc/react-shopify-app-bridge";
-import { AppBridgeContext } from "@shopify/app-bridge-react/context";
 // import and use Shopify's react components like you might in other Shopify app
 import { Button as ButtonAction, Redirect, TitleBar } from "@shopify/app-bridge/actions";
 import { Button, Card, Layout, Spinner } from "@shopify/polaris";
 import type { NextPage } from "next";
-import React, { useContext } from "react";
+import React from "react";
 // import the instance of the Gadget API client for this app constructed in the other file
 import { api } from "../src/api";
 
 const Home: NextPage = () => {
-  const { loading } = useGadget();
-  const appBridge = useContext(AppBridgeContext)!;
+  const { loading, appBridge } = useGadget();
   const [, deleteCustomer] = useAction(api.shopifyCustomer.delete);
   const [{ data, fetching, error }, refresh] = useFindMany(api.shopifyCustomer);
-  if (loading) {
+  // Loading or app bridge has not been set up yet
+  if (loading || !appBridge) {
     return <Spinner />;
   }
 
