@@ -1,5 +1,5 @@
 import { AppType, Provider as GadgetProvider } from "@gadgetinc/react-shopify-app-bridge";
-import { AppProvider, Page } from "@shopify/polaris";
+import { AppProvider as PolarisAppProvider, Page } from "@shopify/polaris";
 import "@shopify/polaris/build/esm/styles.css";
 import enTranslations from "@shopify/polaris/locales/en.json";
 import type { AppProps } from "next/app";
@@ -16,11 +16,11 @@ function AppContainer({ Component, pageProps }: AppProps) {
       Wrap the application in the Shopify Polaris app provider, which makes Polaris components like Button and Card work.
       Learn more about Polaris at https://www.npmjs.com/package/@shopify/polaris
       */}
-      <AppProvider i18n={enTranslations}>
+      <PolarisAppProvider i18n={enTranslations}>
         <Page fullWidth>
           <Component {...pageProps} />
         </Page>
-      </AppProvider>
+      </PolarisAppProvider>
     </GadgetProvider>
   );
 }
