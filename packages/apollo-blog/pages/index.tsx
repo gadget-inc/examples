@@ -1,7 +1,6 @@
 import { Footer } from "chakra-theme/Footer";
 import type { NextPage } from "next";
 import Head from "next/head";
-import React from "react";
 import { PostsList } from "../lib/PostsList";
 
 const Home: NextPage = () => {

@@ -2,7 +2,7 @@ import { CloseIcon } from "@chakra-ui/icons";
 import { Alert, AlertIcon, Box, Button, FormControl, FormLabel, Heading, IconButton, Image, Input, Spinner } from "@chakra-ui/react";
 import { useAction } from "@gadgetinc/react";
 import type { NextPage } from "next";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { api } from "../lib/api";
 import { ExampleContainer } from "../lib/ExampleContainer";

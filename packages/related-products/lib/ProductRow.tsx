@@ -1,7 +1,6 @@
 import { Td, Tr } from "@chakra-ui/react";
 import { ShopifyProduct } from "@gadget-client/related-products-example";
 import { Select } from "@gadgetinc/api-client-core";
-import React from "react";
 import { AddNewPairedProduct } from "../lib/AddNewRelatedProduct";
 import styles from "../styles/Home.module.css";
 

@@ -6,7 +6,6 @@ import { useGadget } from "@gadgetinc/react-shopify-app-bridge";
 import { Button as ButtonAction, Redirect, TitleBar } from "@shopify/app-bridge/actions";
 import { Button, Card, Layout, Spinner } from "@shopify/polaris";
 import type { NextPage } from "next";
-import React from "react";
 // import the instance of the Gadget API client for this app constructed in the other file
 import { api } from "../src/api";
 

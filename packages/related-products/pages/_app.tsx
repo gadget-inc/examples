@@ -3,7 +3,6 @@ import { Provider } from "@gadgetinc/react";
 import { theme } from "chakra-theme";
 import "chakra-theme/globals.css";
 import type { AppProps } from "next/app";
-import React from "react";
 import { api } from "../lib/api";
 
 function GadgetApp({ Component, pageProps }: AppProps) {

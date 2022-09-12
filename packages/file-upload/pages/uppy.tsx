@@ -6,7 +6,7 @@ import "@uppy/core/dist/style.css";
 import "@uppy/dashboard/dist/style.css";
 import { Dashboard } from "@uppy/react";
 import type { NextPage } from "next";
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { api } from "../lib/api";
 import { ExampleContainer } from "../lib/ExampleContainer";
 

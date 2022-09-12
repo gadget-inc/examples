@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/react";
 import { useGet } from "@gadgetinc/react";
-import React from "react";
 import { api } from "./api";
 
 export const WhoAmI = () => {

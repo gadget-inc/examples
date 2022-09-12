@@ -2,7 +2,6 @@ import { Center, Heading, Spinner, Table, Tbody, Td, Th, Thead, Tr } from "@chak
 import { useFindMany } from "@gadgetinc/react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import React from "react";
 import { api } from "../lib/api";
 import { ProductRow } from "../lib/ProductRow";
 import styles from "../styles/Home.module.css";

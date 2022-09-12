@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/layout";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export const Footer = (props: { folder: string; children?: ReactNode }) => (
   <Box display="flex" flexDirection="row" alignItems="center" padding={3}>

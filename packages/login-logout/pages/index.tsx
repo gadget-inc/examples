@@ -21,7 +21,7 @@ import { Footer } from "chakra-theme/Footer";
 import { isEqual } from "lodash";
 import type { NextPage } from "next";
 import Head from "next/head";
-import React, { useState } from "react";
+import { useState } from "react";
 import { api } from "../lib/api";
 import { WhoAmI } from "../lib/WhoAmI";
 

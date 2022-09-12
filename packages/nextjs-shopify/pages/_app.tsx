@@ -3,7 +3,6 @@ import { AppProvider as PolarisAppProvider, Page } from "@shopify/polaris";
 import "@shopify/polaris/build/esm/styles.css";
 import enTranslations from "@shopify/polaris/locales/en.json";
 import type { AppProps } from "next/app";
-import React from "react";
 import { api } from "../src/api";
 import "../styles/globals.css";
 
