@@ -37,7 +37,7 @@
   "devDependencies": {
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.0",
-    "esbuild-dev": "^0.9.1"
+    "esbuild-dev": "^0.10.0"
   },
   "resolutions": {
     "@gadgetinc/api-client-core": "0.9.0",
