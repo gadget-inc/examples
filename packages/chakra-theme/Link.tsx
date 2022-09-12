@@ -1,6 +1,6 @@
 import { Link as ChakraLink } from "@chakra-ui/react";
 import NextLink from "next/link";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export const Link = (props: { href: string; children: ReactNode }) => {
   return (

@@ -2,7 +2,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import { Footer } from "chakra-theme/Footer";
 import { Link } from "chakra-theme/Link";
 import Head from "next/head";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export const ExampleContainer = (props: { children: ReactNode }) => {
   return (

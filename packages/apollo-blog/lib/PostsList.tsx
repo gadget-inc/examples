@@ -2,7 +2,6 @@ import { gql, useQuery } from "@apollo/client";
 import { Alert, AlertIcon, Box, Heading, Spinner, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import { dateFormat, theme } from "chakra-theme";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import React from "react";
 import ReactMarkdown from "react-markdown";
 
 const PostCard = (props: { post: Record<string, any> }) => {
@@ -12,11 +11,11 @@ const PostCard = (props: { post: Record<string, any> }) => {
         {props.post.title}
       </Heading>
       <Text size="sm" color={useColorModeValue("gray.700", "gray.200")}>
-        Written by {props.post.author.name} on {dateFormat.format(props.post.createdAt)}
+        Written by {props.post.author?.name} on {dateFormat.format(props.post.createdAt)}
       </Text>
       <Box marginTop={3}>
         <ReactMarkdown components={ChakraUIRenderer(theme)} skipHtml>
-          {props.post.body.markdown}
+          {props.post.content.markdown}
         </ReactMarkdown>
       </Box>
     </Box>
@@ -30,10 +29,10 @@ const GetPosts = gql`
         node {
           id
           title
-          author {
+          user {
             name
           }
-          body {
+          content {
             markdown
           }
         }

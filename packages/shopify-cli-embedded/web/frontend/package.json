@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@gadget-client/shopify-cli-connection": "^1.11.0",
-    "@gadgetinc/react": "^0.5.0",
-    "@gadgetinc/react-shopify-app-bridge": "^0.2.4",
+    "@gadgetinc/react": "^0.7.2",
+    "@gadgetinc/react-shopify-app-bridge": "^0.4.0",
     "@shopify/app-bridge": "^3.1.0",
     "@shopify/app-bridge-react": "^3.1.0",
     "@shopify/app-bridge-utils": "^3.1.0",

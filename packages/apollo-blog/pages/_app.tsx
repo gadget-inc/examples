@@ -3,7 +3,6 @@ import { ChakraProvider, Container, Flex } from "@chakra-ui/react";
 import { theme } from "chakra-theme";
 import "chakra-theme/globals.css";
 import type { AppProps } from "next/app";
-import React from "react";
 import { client } from "../lib/apollo";
 
 function GadgetApp({ Component, pageProps }: AppProps) {

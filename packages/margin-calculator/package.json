@@ -11,8 +11,8 @@
     "start": "remix-serve build"
   },
   "dependencies": {
-    "@gadget-client/margin-calculator-example": "^1.106.0",
-    "@gadgetinc/react": "^0.5.0",
+    "@gadget-client/margin-calculator-example": "^1.114.0",
+    "@gadgetinc/react": "^0.7.2",
     "@remix-run/react": "^1.1.1",
     "@remix-run/serve": "^1.1.1",
     "@shopify/polaris": "^9.21.1",
@@ -27,7 +27,7 @@
     "@types/dinero.js": "^1.9.0",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.17",
-    "typescript": "^4.1.2"
+    "typescript": "4.7.4"
   },
   "engines": {
     "node": ">=14"
