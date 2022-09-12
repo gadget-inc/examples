@@ -34,7 +34,7 @@ const LogOutButton = () => {
   });
 
   return (
-    <Button type="submit" colorScheme="blue" disabled={fetching} onClick={() => void logout()}>
+    <Button type="submit" colorScheme="blue" disabled={fetching} onClick={() => void logout({})}>
       Log Out
     </Button>
   );

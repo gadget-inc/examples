@@ -11,8 +11,8 @@ const PostSelection = {
   id: true,
   title: true,
   createdAt: true,
-  body: { markdown: true },
-  author: { id: true, name: true, email: true },
+  content: { markdown: true },
+  user: { id: true, name: true, email: true },
 } as const;
 
 const PostCard = (props: { post: Select<Post, typeof PostSelection> }) => {
@@ -22,11 +22,11 @@ const PostCard = (props: { post: Select<Post, typeof PostSelection> }) => {
         {props.post.title}
       </Heading>
       <Text size="sm" color={useColorModeValue("gray.700", "gray.200")}>
-        Written by {props.post.author?.name} on {dateFormat.format(props.post.createdAt)}
+        Written by {props.post.user?.name} on {dateFormat.format(props.post.createdAt)}
       </Text>
       <Box marginTop={3}>
         <ReactMarkdown components={ChakraUIRenderer(theme)} skipHtml>
-          {props.post.body?.markdown || ""}
+          {props.post.content?.markdown || ""}
         </ReactMarkdown>
       </Box>
     </Box>
