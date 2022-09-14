@@ -18,6 +18,7 @@
     "packages/login-logout",
     "packages/related-products",
     "packages/simple-blog",
+    "packages/simple-form",
     "packages/apollo-blog",
     "packages/file-upload",
     "packages/margin-calculator",
