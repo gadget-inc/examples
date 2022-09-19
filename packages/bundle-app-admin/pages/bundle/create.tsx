@@ -210,7 +210,7 @@ const CreateBundle: NextPage = () => {
               _converge: {
                 values: bundle.products.flatMap((product) => {
                   return product.variants.map((variant) => ({
-                    shopifyProduct: {
+                    product: {
                       _link: product.id,
                     },
                     quantity: product.quantity,
