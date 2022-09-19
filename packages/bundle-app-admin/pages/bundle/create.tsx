@@ -1,5 +1,5 @@
 import { ShopifyProductVariant, StoredFileInput } from "@gadget-client/bundle-tutorial";
-import { useFindMany } from "@gadgetinc/react";
+import { useAction, useFindMany } from "@gadgetinc/react";
 import {
   Button,
   Caption,
@@ -19,16 +19,14 @@ import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import { api } from "../../api/gadget";
 import AddProduct from "../../components/AddProduct";
-import { Bundle, BundleProduct } from "../../types/Bundle";
-import { numberFormatter } from "../../utils/numberFormater";
+import { Bundle } from "../../types/Bundle";
+import { calculateLinePrice, calculatePricing, formatPriceRange } from "../../utils/bundlePricing";
+import { updateBundleProducts } from "../../utils/updateProductsData";
 
 const MINIMUM_QUANTITY = 1;
 
 const CreateBundle: NextPage = () => {
   const router = useRouter();
-
-  // use to disable UI while saving
-  const [isSaving, setSavingBundle] = useState(false);
 
   // make request to Gadget app API for available products
   const [productResults] = useFindMany(api.shopifyProduct);
@@ -47,66 +45,17 @@ const CreateBundle: NextPage = () => {
     products: [],
   });
 
+  // useAction hook to handle bundle creation request to Gadget
+  const [bundleCreateData, createBundle] = useAction(api.bundle.create, {
+    select: {
+      id: true,
+    },
+  });
+
   const [file, setFile] = useState<File>();
   const handleDrop = useCallback((_droppedfile: File[], acceptedfile: File[]) => {
     setFile(acceptedfile[0]);
   }, []);
-
-  const [minMaxPrice, setMinMaxPrice] = useState([-1, -1]);
-  const formatPriceRange = (minMaxPrice: number[]) => {
-    const minPrice = minMaxPrice[0];
-    const maxPrice = minMaxPrice[1];
-
-    if (minPrice < 0 && maxPrice < 0) {
-      return numberFormatter.format(0);
-    } else if (minPrice === maxPrice) {
-      return numberFormatter.format(minPrice);
-    } else {
-      return `${numberFormatter.format(minPrice)} - ${numberFormatter.format(maxPrice)}`;
-    }
-  };
-  // calculate the range of pricing based on selected variants and quantity
-  const calculatePricing = (products: BundleProduct[]) => {
-    if (products.length === 0) {
-      return [-1, -1];
-    }
-    const priceRangePerProduct: number[][] = products.map((product) => {
-      const quantity = product.quantity;
-      let minVariantPrice = -1;
-      let maxVariantPrice = -1;
-
-      product.variants.forEach((variant) => {
-        if (minVariantPrice < 0) {
-          // first variant, set min and max to the discounted price
-          minVariantPrice = variant.linePrice;
-          maxVariantPrice = variant.linePrice;
-        } else if (variant.linePrice < minVariantPrice) {
-          minVariantPrice = variant.linePrice;
-        } else if (variant.linePrice > maxVariantPrice) {
-          maxVariantPrice = variant.linePrice;
-        }
-      });
-
-      return [minVariantPrice * quantity, maxVariantPrice * quantity];
-    });
-
-    const bundleMinMax = priceRangePerProduct.reduce(
-      (minMaxPrice, productRange) => {
-        const min = minMaxPrice[0] + productRange[0];
-        const max = minMaxPrice[1] + productRange[1];
-
-        return [min, max];
-      },
-      [0, 0]
-    );
-
-    return bundleMinMax;
-  };
-
-  // util for calculating discounted price
-  const calculateLinePrice = (originalPrice: number, discountPercentage: number) => {
-    return originalPrice * (1 - discountPercentage / 100);
-  };
 
   /**
    * Bundle changes
@@ -117,13 +66,14 @@ const CreateBundle: NextPage = () => {
     },
     [bundle]
   );
+
   const updateDiscountPercentage = useCallback(
     (discount: string) => {
       const discountPercentage = Math.min(100, Math.max(0, discount ? parseInt(discount) : 0));
 
       // update variant pricing
-      const updatedProducts = [...bundle.products].map((product) => {
-        const updatedVariants = [...product.variants].map((variant) => {
+      const updatedProducts = bundle.products.map((product) => {
+        const updatedVariants = product.variants.map((variant) => {
           if (variant.originalPrice) {
             variant.linePrice = calculateLinePrice(variant.originalPrice, discountPercentage);
           }
@@ -134,7 +84,6 @@ const CreateBundle: NextPage = () => {
       });
 
       setBundle({ ...bundle, discountPercentage, products: updatedProducts });
-      setMinMaxPrice(calculatePricing(updatedProducts));
     },
     [bundle]
   );
@@ -142,13 +91,6 @@ const CreateBundle: NextPage = () => {
   /**
    * Product changes
    **/
-
-  // util for updating selected products array
-  const updateBundleProducts = (bundleProducts: BundleProduct[], index: number, updatedBundleProduct: BundleProduct) => [
-    ...bundleProducts.slice(0, index),
-    updatedBundleProduct,
-    ...bundleProducts.slice(index + 1),
-  ];
 
   const addProduct = useCallback(() => {
     const products = [...bundle.products];
@@ -159,6 +101,7 @@ const CreateBundle: NextPage = () => {
     });
     setBundle({ ...bundle, products });
   }, [bundle]);
+
   const changeProduct = useCallback(
     (productId: string, index: number) => {
       const updatedProducts = updateBundleProducts(bundle.products, index, {
@@ -170,15 +113,16 @@ const CreateBundle: NextPage = () => {
     },
     [bundle]
   );
+
   const removeProduct = useCallback(
     (index: number) => {
       const products = [...bundle.products];
       products.splice(index, 1);
       setBundle({ ...bundle, products });
-      setMinMaxPrice(calculatePricing(products));
     },
     [bundle]
   );
+
   const changeProductQuantity = useCallback(
     (quantity: number, index: number) => {
       const updatedBundleProducts = updateBundleProducts(bundle.products, index, {
@@ -187,7 +131,6 @@ const CreateBundle: NextPage = () => {
       });
 
       setBundle({ ...bundle, products: updatedBundleProducts });
-      setMinMaxPrice(calculatePricing(updatedBundleProducts));
     },
     [bundle]
   );
@@ -217,12 +160,12 @@ const CreateBundle: NextPage = () => {
       updatedProducts[index] = product;
 
       setBundle({ ...bundle, products: updatedProducts });
-      setMinMaxPrice(calculatePricing(updatedProducts));
     },
     [bundle]
   );
 
   const fileUpload = !file && <DropZone.FileUpload />;
+
   const uploadedfile = file && (
     <Stack>
       <Thumbnail size="small" alt={file.name} source={window.URL.createObjectURL(file)} />
@@ -246,9 +189,7 @@ const CreateBundle: NextPage = () => {
   };
 
   // handle form submission (bundle creation), and move on to pricing
-  const handleSubmit = useCallback(async () => {
-    setSavingBundle(true);
-
+  const handleSubmit = async () => {
     let image: StoredFileInput | null = null;
     if (file) {
       const token = await handleFileUpload(file);
@@ -260,7 +201,7 @@ const CreateBundle: NextPage = () => {
 
     // write bundle to Gadget, along with linked products and product variants
     try {
-      await api.bundle.create({
+      await createBundle({
         bundle: {
           title: bundle.title,
           image: image ? image : undefined,
@@ -285,12 +226,10 @@ const CreateBundle: NextPage = () => {
         },
       });
     } finally {
-      setSavingBundle(false);
-
       // navigate back to home page
       await router.push("/");
     }
-  }, [bundle, file, router]);
+  };
 
   // simplistic error and fetch handling
   if (productResults.error) return <>Error: {productResults.error.toString()}</>;
@@ -298,6 +237,8 @@ const CreateBundle: NextPage = () => {
   if ((productResults.fetching && !productResults.data) || (bundleResults.fetching && !bundleResults.data)) return <>Fetching...</>;
   if (!productResults.data) return <>No products found</>;
   if (!bundleResults.data) return <>No bundles found</>;
+  // error handling for bundle create
+  if (bundleCreateData.error) return <>Error creating bundle: {bundleCreateData.error.toString()}</>;
 
   // collect available product options
   const productOptions: SelectOption[] | undefined = productResults.data
@@ -307,6 +248,11 @@ const CreateBundle: NextPage = () => {
     }))
     // remove bundles from available options
     .filter((product) => !bundleResults.data?.find((bundle) => bundle.trackerProductId === product.value));
+
+  // on save action, disable form fields
+  const isSaving = bundleCreateData.fetching;
+  // calculate and display price range for bundle
+  const minMaxPrice = calculatePricing(bundle.products);
 
   return (
     <Card sectioned>
