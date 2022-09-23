@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@gadget-client/bundle-tutorial": "^1.44.0",
+    "@gadget-client/bundle-tutorial": "^1.165.0",
     "@gadgetinc/react": "^0.7.2",
     "@gadgetinc/react-shopify-app-bridge": "^0.4.0",
     "@shopify/polaris": "^10.0.0",

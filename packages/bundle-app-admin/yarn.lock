@@ -32,10 +32,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@gadget-client/bundle-tutorial@^1.44.0":
-  version "1.44.0"
-  resolved "https://registry.gadget.dev/npm/_/tarball/4795/8382/1591#6a1a7bce15c2a44d85ed162eab48829a7ed4c55f"
-  integrity sha1-ahp7zhXCpE2F7RYuq0iCmn7UxV8=
+"@gadget-client/bundle-tutorial@^1.165.0":
+  version "1.165.0"
+  resolved "https://registry.gadget.dev/npm/_/tarball/4795/8382/1665#29b761e896df6be95ce47047041e38a2a42164c5"
+  integrity sha1-Kbdh6Jbfa+lc5HBHBB44oqQhZMU=
   dependencies:
     "@gadgetinc/api-client-core" "0.9.0"
 
