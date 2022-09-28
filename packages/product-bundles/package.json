@@ -1,0 +1,19 @@
+{
+  "name": "product-bundles",
+  "version": "1.0.0",
+  "main": "web/index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "shopify": "shopify",
+    "build": "shopify app build",
+    "dev": "shopify app dev --no-update",
+    "info": "shopify app info",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy"
+  },
+  "dependencies": {
+    "@shopify/app": "3.15.0",
+    "@shopify/cli": "3.15.0"
+  },
+  "author": "gadget"
+}
