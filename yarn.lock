@@ -1900,10 +1900,10 @@
   dependencies:
     "@gadgetinc/api-client-core" "0.9.0"
 
-"@gadgetinc/api-client-core@0.9.0", "@gadgetinc/api-client-core@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.9.0.tgz#f31f51b43c4a2810f083eb0f3c3f83619a85898f"
-  integrity sha512-B3fYkNKVwjVLScoMRUGch0heDOPq/g5APMKFBu12kssEAc3Jhbyv+nNeDI093/eCED5m2T5/vPn9KIzrk4DIMQ==
+"@gadgetinc/api-client-core@0.10.0", "@gadgetinc/api-client-core@0.9.0", "@gadgetinc/api-client-core@^0.10.0", "@gadgetinc/api-client-core@^0.9.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.10.0.tgz#aea2d2d18a0e615678c99e669dfe0591b98424b9"
+  integrity sha512-rrlfzztOuZ4fw/vR0HCQOg18dtcnOdZQ0xuTbsqGoJYPuKgzXB8NUO5V6WfeqO1hi+QMVc8upFSMhMNNeyg9cQ==
   dependencies:
     "@opentelemetry/api" "^1.0.4"
     "@urql/core" "^3.0.1"
@@ -1953,12 +1953,12 @@
     crypto-js "^4.1.1"
     lodash "^4.17.21"
 
-"@gadgetinc/react@0.7.2", "@gadgetinc/react@^0.7.0", "@gadgetinc/react@^0.7.2":
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/@gadgetinc/react/-/react-0.7.2.tgz#6b17ed922f021ece06950e505595f2a982e13857"
-  integrity sha512-6Ak9HVfxXUrF1lDwYXT9ICycayDUXWS7JsblepCbslwelBC3F9ar8aNsDvbbyNfo3DikugvpidF5pDLZV2+vNg==
+"@gadgetinc/react@0.8.0", "@gadgetinc/react@^0.7.0", "@gadgetinc/react@^0.7.2":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@gadgetinc/react/-/react-0.8.0.tgz#93a6fa8bbc9d9875c1ceaaa2fdd85fb7ccdea8f0"
+  integrity sha512-gy8HmfbudDUrU0i2aObD6gu/6/udxdl8SDkezy/LJaZezW9c2fltY+g5Z4NFW96OzGVfwl0goL7MOwhGjRHjZQ==
   dependencies:
-    "@gadgetinc/api-client-core" "^0.9.0"
+    "@gadgetinc/api-client-core" "^0.10.0"
     deep-equal "^2.0.5"
     urql "^3.0.1"
 
@@ -3207,9 +3207,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@17.0.33", "@types/react@17.0.38", "@types/react@^17", "@types/react@^17.0.0", "@types/react@^17.0.15", "@types/react@^17.0.2", "@types/react@^17.0.24", "@types/react@^17.0.38":
-  version "17.0.49"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.49.tgz#df87ba4ca8b7942209c3dc655846724539dc1049"
-  integrity sha512-CCBPMZaPhcKkYUTqFs/hOWqKjPxhTEmnZWjlHHgIMop67DsXywf9B5Os9Hz8KSacjNOgIdnZVJamwl232uxoPg==
+  version "17.0.48"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.48.tgz#a4532a8b91d7b27b8768b6fc0c3bccb760d15a6c"
+  integrity sha512-zJ6IYlJ8cYYxiJfUaZOQee4lh99mFihBoqkOSEGV+dFi9leROW6+PgstzQ+w3gWTnUfskALtQPGHK6dYmPj+2A==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
