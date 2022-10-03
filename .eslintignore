@@ -2,3 +2,5 @@ node_modules
 .eslintrc.js
 .direnv
 .next
+
+packages/discounts-assemblyscript

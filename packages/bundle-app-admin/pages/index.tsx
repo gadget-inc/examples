@@ -10,7 +10,7 @@ const Home: NextPage = () => {
 
   // add bundles to Select component state
   const options = bundleData?.map((bundle) => ({
-    label: bundle.title as string,
+    label: bundle.title,
     value: bundle.id,
   }));
 
