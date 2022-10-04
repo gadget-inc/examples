@@ -2,6 +2,8 @@
 
 ## Deployment instructions
 
+- Follow the [Shopify Functions tutorial](https://shopify.dev/apps/discounts/create) to build out your app frontend
+- Instead of using the Rust Function extension included in Shopify's tutorial, copy this project's `volume` folder into your Shopify app
 - Run `yarn` inside `extensions/volume` to install dependencies (the AssemblyScript compiler)
 - Deploy the function with `npm run deploy` or `yarn deploy`
 - In `web/frontend/pages/Volume/new.jsx`, update the **FUNCTION_ID** value with the **SHOPIFY_VOLUME_ID** value in the app's `.env` file

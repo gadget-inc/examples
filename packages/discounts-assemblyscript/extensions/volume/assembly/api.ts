@@ -76,6 +76,7 @@ export class Discount {
   value: DiscountValue;
   targets: Array<Target>;
   message: string;
+  // unused for now, issues with nullable fields - https://github.com/JairusSW/as-json/issues/28
   // conditions: Array<Condition>;
 
   constructor(
