@@ -34,6 +34,21 @@ Features used:
 - Gadget authentication system (`User` model)
 - Generated API client (`@gadget-client/simple-blog-example` package) and React bindings (`@gadget-inc/react` package)
 
+## Simple Form
+
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/simple-form) | [Preview Site](https://gadget-form-example.vercel.app/) | [API Reference](https://docs.gadget.dev/api/simple-ticket-example)
+
+Building nice forms for users means tracking client side state and showing good quality validation errors. This example shows how to use Gadget's React hooks to run an action with user input, and show errors to the user if the action fails.
+
+- Backend: Gadget via GraphQL
+- Frontend: next.js with `@gadgetinc/react` and ChakraUI
+
+Features used:
+
+- React state
+- Gadget generated GraphQL API
+- Generated API client (`@gadget-client/simple-ticket-example` package) and React bindings (`@gadget-inc/react` package)
+
 ## Shopify CLI App
 
 [Code](https://github.com/gadget-inc/examples/tree/main/packages/shopify-cli-embedded)
