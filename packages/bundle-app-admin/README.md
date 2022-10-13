@@ -76,9 +76,9 @@ Second, you'll need to update the `import` statement in `src/api.ts` to use the 
 
 ```typescript
 // in src/api.ts change:
-import { Client, BrowserSessionStorageType } from "@gadget-client/public-test";
+import { Client } from "@gadget-client/public-test";
 // to:
-import { Client, BrowserSessionStorageType } from "@gadget-client/<your-app-slug>";
+import { Client } from "@gadget-client/<your-app-slug>";
 ```
 
 Third, you'll need to update the `NEXT_PUBLIC_SHOPIFY_API_KEY` environment variable. This variable should hold the Shopify App API Key that you're using for your app from the Shopify Partners Dashboard or in-admin App page, and it should match the Shopify Connection you've set up in Gadget.

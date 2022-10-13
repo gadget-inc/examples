@@ -71,9 +71,9 @@ Second, you'll need to update the `import` statement in `src/api.ts` to use the 
 
 ```typescript
 // in src/api.ts change:
-import { Client, BrowserSessionStorageType } from "@gadget-client/public-test";
+import { Client } from "@gadget-client/public-test";
 // to:
-import { Client, BrowserSessionStorageType } from "@gadget-client/<your-app-slug>";
+import { Client } from "@gadget-client/<your-app-slug>";
 ```
 
 ## Learn More
