@@ -229,6 +229,7 @@ export default function CreateBundle() {
         bundle: {
           title: bundle.title,
           image: image ? image : undefined,
+          discount: bundle.discountPercentage,
           bundleElements: [
             {
               _converge: {

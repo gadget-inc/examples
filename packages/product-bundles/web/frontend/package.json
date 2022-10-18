@@ -12,9 +12,9 @@
     "node": ">= 12.16"
   },
   "dependencies": {
-    "@gadget-client/bundle-tutorial": "^1.276.0",
-    "@gadgetinc/react": "^0.7.2",
-    "@gadgetinc/react-shopify-app-bridge": "^0.4.1",
+    "@gadget-client/bundle-tutorial": "^1.1806.0",
+    "@gadgetinc/react": "^0.8.1",
+    "@gadgetinc/react-shopify-app-bridge": "^0.4.2",
     "@shopify/app-bridge": "^3.1.0",
     "@shopify/app-bridge-react": "^3.1.0",
     "@shopify/app-bridge-utils": "^3.1.0",
