@@ -40,37 +40,47 @@ function run(input: Input): FunctionResult {
 
     const bundle = bundles[i];
     const bundleProducts = bundle.bundleElements!.edges;
+    // used to count unique products (may be multiple variants per product)
+    let uniqueBundleProducts: string[] = [];
     // check products in bundle
     for (let j = 0; j < bundleProducts.length; j++) {
-      // check products in cart
-      for (let k = 0; k < cartLines.length; k++) {
-        const cartLine = cartLines[k];
+      const product = bundleProducts[j].node;
 
-        if (cartLine.merchandise != null && cartLine.merchandise!.id != null) {
-          const productUid = cartLine.merchandise!.id;
-          const product = bundleProducts[j].node;
+      if (product != null && product.productId != null) {
+        if (uniqueBundleProducts.length === 0 || !uniqueBundleProducts.includes(product.productId!)) {
+          uniqueBundleProducts.push(product.productId!);
+        }
+        // check products in cart
+        for (let k = 0; k < cartLines.length; k++) {
+          const cartLine = cartLines[k];
 
-          if (
-            product != null &&
-            product.productVariantId != null &&
-            productUid != null &&
-            productUid.includes(product.productVariantId!) &&
-            cartLine.quantity >= product.quantity
-          ) {
-            // if there is a match between the bundle product id and the cart product id
-            // and the cart quantity is big enough, add as a discounted product
-            discountedBundleProducts.push(new Target(new ProductVariantTarget(productUid, product.quantity)));
+          if (cartLine.merchandise != null && cartLine.merchandise!.id != null) {
+            const productUid = cartLine.merchandise!.id;
+
+            if (
+              product.productVariantId != null &&
+              productUid != null &&
+              productUid.includes(product.productVariantId!) &&
+              cartLine.quantity >= product.quantity
+            ) {
+              // if there is a match between the bundle product id and the cart product id
+              // and the cart quantity is big enough, add as a discounted product
+              discountedBundleProducts.push(new Target(new ProductVariantTarget(productUid, product.quantity)));
+            }
           }
         }
       }
     }
 
     // check to see if we have a bundle
-    if (discountedBundleProducts.length === bundleProducts.length) {
+    if (discountedBundleProducts.length === uniqueBundleProducts.length) {
       // ladies and gentlemen, we have a bundle
       // apply the discount!
       discounts.push(new Discount(new DiscountValue(new Percentage(bundle.discount)), discountedBundleProducts, bundle.title!));
     }
+
+    // reset the product array
+    uniqueBundleProducts = [];
   }
 
   // return discounts (or empty array if no discounts are available)

@@ -1,4 +1,11 @@
-import { multiBundleMetaValue, oneBundleMetaValue, singleProductBundle, twoProductBundle } from "./constants";
+import {
+  multiBundleMetaValue,
+  multiVariantBundleMetaValue,
+  oneBundleMetaValue,
+  oneProductTwoVariantBundleV1,
+  singleProductBundle,
+  twoProductBundle,
+} from "./constants";
 import { functionRunner } from "./helper";
 
 test("should not apply discount: no items in cart", () => {
@@ -231,5 +238,32 @@ test("should apply two bundle discounts", () => {
   expect(JSON.parse(output)).toStrictEqual({
     discountApplicationStrategy: "FIRST",
     discounts: [singleProductBundle, twoProductBundle],
+  });
+});
+
+test("should work with single variant", () => {
+  const output = functionRunner(
+    JSON.stringify({
+      cart: {
+        lines: [
+          {
+            quantity: 2,
+            merchandise: {
+              id: "gid://shopify/ProductVariant/1",
+            },
+          },
+        ],
+      },
+      discountNode: {
+        metafield: {
+          value: multiVariantBundleMetaValue,
+        },
+      },
+    })
+  );
+
+  expect(JSON.parse(output)).toStrictEqual({
+    discountApplicationStrategy: "FIRST",
+    discounts: [oneProductTwoVariantBundleV1],
   });
 });

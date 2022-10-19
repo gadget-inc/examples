@@ -107,6 +107,7 @@ class Node {
 class BundleElement {
   quantity: i64 = 0;
   linePrice: LinePrice | null = null;
+  productId: string | null = null;
   productVariantId: string | null = null;
 
   deserialize(jsonObj: JSON.Obj): void {
@@ -120,6 +121,11 @@ class BundleElement {
       const linePrice: LinePrice = new LinePrice();
       linePrice.deserialize(linePriceObj);
       this.linePrice = linePrice;
+    }
+
+    const productIdObj = jsonObj.getString("productId");
+    if (productIdObj != null) {
+      this.productId = productIdObj.valueOf();
     }
 
     const productVariantIdObj = jsonObj.getString("productVariantId");
