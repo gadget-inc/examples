@@ -1,10 +1,5 @@
+import { multiBundleMetaValue, oneBundleMetaValue, singleProductBundle, twoProductBundle } from "./constants";
 import { functionRunner } from "./helper";
-import {
-  multiBundleMetaValue,
-  oneBundleMetaValue,
-  singleProductBundle,
-  twoProductBundle,
-} from "./constants";
 
 test("should not apply discount: no items in cart", () => {
   const output = functionRunner(

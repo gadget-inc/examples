@@ -1,16 +1,6 @@
-import React from "react";
 import { ShopifyProductVariant } from "@gadget-client/bundle-tutorial";
 import { useFindMany } from "@gadgetinc/react";
-import {
-  Button,
-  Collapsible,
-  Select,
-  SelectOption,
-  Spinner,
-  Stack,
-  Subheading,
-  TextField,
-} from "@shopify/polaris";
+import { Button, Collapsible, Select, SelectOption, Spinner, Stack, Subheading, TextField } from "@shopify/polaris";
 import { api } from "../api/gadget";
 import { BundleProduct } from "../types/Bundle";
 import { VariantDetails } from "./VariantDetails";
@@ -79,12 +69,8 @@ export const AddProduct = ({
                   data[0].variants.edges.map((productVariant) => (
                     <VariantDetails
                       key={productVariant.node.id}
-                      bundleVariant={product.variants.find(
-                        (v) => v.id === productVariant.node.id
-                      )}
-                      productVariant={
-                        productVariant.node as unknown as ShopifyProductVariant
-                      }
+                      bundleVariant={product.variants.find((v) => v.id === productVariant.node.id)}
+                      productVariant={productVariant.node as unknown as ShopifyProductVariant}
                       changeVariant={changeVariants}
                       isSaving={isSaving}
                     />

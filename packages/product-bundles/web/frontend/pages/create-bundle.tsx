@@ -1,9 +1,6 @@
-import React from "react";
-import {
-  ShopifyProductVariant,
-  StoredFileInput,
-} from "@gadget-client/bundle-tutorial";
+import { ShopifyProductVariant, StoredFileInput } from "@gadget-client/bundle-tutorial";
 import { useAction, useFindMany } from "@gadgetinc/react";
+import { useNavigate } from "@shopify/app-bridge-react";
 import {
   Button,
   Caption,
@@ -18,16 +15,11 @@ import {
   TextField,
   Thumbnail,
 } from "@shopify/polaris";
-import { useNavigate } from "@shopify/app-bridge-react";
 import { useCallback, useState } from "react";
 import { api } from "../api/gadget";
 import { AddProduct } from "../components/AddProduct";
 import { Bundle } from "../types/Bundle";
-import {
-  calculateLinePrice,
-  calculatePricing,
-  formatPriceRange,
-} from "../utils/bundlePricing";
+import { calculateLinePrice, calculatePricing, formatPriceRange } from "../utils/bundlePricing";
 import { updateBundleProducts } from "../utils/updateProductsData";
 
 const MINIMUM_QUANTITY = 1;
@@ -60,12 +52,9 @@ export default function CreateBundle() {
   });
 
   const [file, setFile] = useState<File>();
-  const handleDrop = useCallback(
-    (_droppedfile: File[], acceptedfile: File[]) => {
-      setFile(acceptedfile[0]);
-    },
-    []
-  );
+  const handleDrop = useCallback((_droppedfile: File[], acceptedfile: File[]) => {
+    setFile(acceptedfile[0]);
+  }, []);
 
   /**
    * Bundle changes
@@ -79,19 +68,13 @@ export default function CreateBundle() {
 
   const updateDiscountPercentage = useCallback(
     (discount: string) => {
-      const discountPercentage = Math.min(
-        100,
-        Math.max(0, discount ? parseInt(discount) : 0)
-      );
+      const discountPercentage = Math.min(100, Math.max(0, discount ? parseInt(discount) : 0));
 
       // update variant pricing
       const updatedProducts = bundle.products.map((product) => {
         const updatedVariants = product.variants.map((variant) => {
           if (variant.originalPrice) {
-            variant.linePrice = calculateLinePrice(
-              variant.originalPrice,
-              discountPercentage
-            );
+            variant.linePrice = calculateLinePrice(variant.originalPrice, discountPercentage);
           }
           return variant;
         });
@@ -141,14 +124,10 @@ export default function CreateBundle() {
 
   const changeProductQuantity = useCallback(
     (quantity: number, index: number) => {
-      const updatedBundleProducts = updateBundleProducts(
-        bundle.products,
-        index,
-        {
-          ...bundle.products[index],
-          quantity: Math.max(MINIMUM_QUANTITY, quantity),
-        }
-      );
+      const updatedBundleProducts = updateBundleProducts(bundle.products, index, {
+        ...bundle.products[index],
+        quantity: Math.max(MINIMUM_QUANTITY, quantity),
+      });
 
       setBundle({ ...bundle, products: updatedBundleProducts });
     },
@@ -188,11 +167,7 @@ export default function CreateBundle() {
 
   const uploadedfile = file && (
     <Stack>
-      <Thumbnail
-        size="small"
-        alt={file.name}
-        source={window.URL.createObjectURL(file)}
-      />
+      <Thumbnail size="small" alt={file.name} source={window.URL.createObjectURL(file)} />
       <div>
         {file.name} <Caption>{file.size} bytes</Caption>
       </div>
@@ -257,19 +232,13 @@ export default function CreateBundle() {
   };
 
   // simplistic error and fetch handling
-  if (productResults.error)
-    return <>Error: {productResults.error.toString()}</>;
+  if (productResults.error) return <>Error: {productResults.error.toString()}</>;
   if (bundleResults.error) return <>Error: {bundleResults.error.toString()}</>;
-  if (
-    (productResults.fetching && !productResults.data) ||
-    (bundleResults.fetching && !bundleResults.data)
-  )
-    return <>Fetching...</>;
+  if ((productResults.fetching && !productResults.data) || (bundleResults.fetching && !bundleResults.data)) return <Spinner />;
   if (!productResults.data) return <>No products found</>;
   if (!bundleResults.data) return <>No bundles found</>;
   // error handling for bundle create
-  if (bundleCreateData.error)
-    return <>Error creating bundle: {bundleCreateData.error.toString()}</>;
+  if (bundleCreateData.error) return <>Error creating bundle: {bundleCreateData.error.toString()}</>;
 
   // collect available product options
   const productOptions: SelectOption[] | undefined = productResults.data
@@ -278,12 +247,7 @@ export default function CreateBundle() {
       value: product.id,
     }))
     // remove bundles from available options
-    .filter(
-      (product) =>
-        !bundleResults.data?.find(
-          (bundle) => bundle.trackerProductId === product.value
-        )
-    );
+    .filter((product) => !bundleResults.data?.find((bundle) => bundle.trackerProductId === product.value));
 
   // on save action, disable form fields
   const isSaving = bundleCreateData.fetching;
@@ -319,13 +283,7 @@ export default function CreateBundle() {
                 />
               </Stack.Item>
               <Stack.Item>
-                <DropZone
-                  accept="image/*"
-                  type="image"
-                  onDrop={handleDrop}
-                  disabled={isSaving}
-                  allowMultiple={false}
-                >
+                <DropZone accept="image/*" type="image" onDrop={handleDrop} disabled={isSaving} allowMultiple={false}>
                   {uploadedfile}
                   {fileUpload}
                 </DropZone>
@@ -343,17 +301,10 @@ export default function CreateBundle() {
                 key={i}
                 product={product}
                 productOptions={productOptions}
-                selectProduct={(productId: string) =>
-                  changeProduct(productId, i)
-                }
-                selectQuantity={(quantity: string) =>
-                  changeProductQuantity(parseInt(quantity), i)
-                }
+                selectProduct={(productId: string) => changeProduct(productId, i)}
+                selectQuantity={(quantity: string) => changeProductQuantity(parseInt(quantity), i)}
                 deleteProduct={() => removeProduct(i)}
-                changeVariants={(
-                  variant: ShopifyProductVariant,
-                  checked: boolean
-                ) => changeVariants(variant, checked, i)}
+                changeVariants={(variant: ShopifyProductVariant, checked: boolean) => changeVariants(variant, checked, i)}
                 isSaving={isSaving}
               />
             ))}
@@ -361,15 +312,7 @@ export default function CreateBundle() {
               <Button onClick={addProduct} disabled={isSaving}>
                 Add product
               </Button>
-              <Button
-                submit
-                primary
-                disabled={
-                  bundle.title === "" ||
-                  bundle.products.length === 0 ||
-                  isSaving
-                }
-              >
+              <Button submit primary disabled={bundle.title === "" || bundle.products.length === 0 || isSaving}>
                 Save bundle
               </Button>
               {isSaving && (

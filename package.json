@@ -24,7 +24,8 @@
     "packages/margin-calculator",
     "packages/product-recommendations-quiz-app/product-quiz-ui",
     "packages/nextjs-shopify",
-    "packages/shopify-cli-embedded"
+    "packages/shopify-cli-embedded",
+    "packages/product-bundles"
   ],
   "dependencies": {
     "@gadgetinc/eslint-config": "^0.4.0",

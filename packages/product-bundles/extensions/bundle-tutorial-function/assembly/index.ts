@@ -1,15 +1,15 @@
 // The entry file of your WebAssembly module.
 
-import "wasi";
 import { Console } from "as-wasi/assembly";
+import "wasi";
 import {
-  Input,
-  FunctionResult,
   Discount,
   DiscountApplicationStrategy,
   DiscountValue,
-  ProductVariantTarget,
+  FunctionResult,
+  Input,
   Percentage,
+  ProductVariantTarget,
   Target,
 } from "./api";
 import { BundleMetafield } from "./metafieldValue";
@@ -25,9 +25,7 @@ function run(input: Input): FunctionResult {
   const cartLines = input.cart!.lines;
 
   // parse the metafield value
-  const metafieldParse = BundleMetafield.parse(
-    input.discountNode!.metafield!.value!
-  );
+  const metafieldParse = BundleMetafield.parse(input.discountNode!.metafield!.value!);
   const bundles = metafieldParse.bundles;
 
   // if there is nothing in the cart, or no bundles, no discount needs to be applied!
@@ -61,9 +59,7 @@ function run(input: Input): FunctionResult {
           ) {
             // if there is a match between the bundle product id and the cart product id
             // and the cart quantity is big enough, add as a discounted product
-            discountedBundleProducts.push(
-              new Target(new ProductVariantTarget(productUid, product.quantity))
-            );
+            discountedBundleProducts.push(new Target(new ProductVariantTarget(productUid, product.quantity)));
           }
         }
       }
@@ -73,13 +69,7 @@ function run(input: Input): FunctionResult {
     if (discountedBundleProducts.length === bundleProducts.length) {
       // ladies and gentlemen, we have a bundle
       // apply the discount!
-      discounts.push(
-        new Discount(
-          new DiscountValue(new Percentage(bundle.discount)),
-          discountedBundleProducts,
-          bundle.title!
-        )
-      );
+      discounts.push(new Discount(new DiscountValue(new Percentage(bundle.discount)), discountedBundleProducts, bundle.title!));
     }
   }
 

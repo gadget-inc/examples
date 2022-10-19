@@ -113,10 +113,7 @@ export class FunctionResult {
   discountApplicationStrategy: string | null = null; // DiscountApplicationStrategy: AssemblyScript does not yet support string enums (https://github.com/AssemblyScript/assemblyscript/issues/560)
   discounts: Discount[] = [];
 
-  constructor(
-    discountApplicationStrategy: string | null,
-    discounts: Discount[]
-  ) {
+  constructor(discountApplicationStrategy: string | null, discounts: Discount[]) {
     this.discountApplicationStrategy = discountApplicationStrategy;
     this.discounts = discounts;
   }
@@ -126,10 +123,7 @@ export class FunctionResult {
     encoder.pushObject(null);
 
     if (this.discountApplicationStrategy != null) {
-      encoder.setString(
-        "discountApplicationStrategy",
-        this.discountApplicationStrategy!
-      );
+      encoder.setString("discountApplicationStrategy", this.discountApplicationStrategy!);
     }
     encoder.pushArray("discounts");
     for (let i = 0; i < this.discounts.length; i++) {

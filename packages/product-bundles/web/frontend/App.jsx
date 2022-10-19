@@ -1,21 +1,14 @@
 import { BrowserRouter } from "react-router-dom";
 import { NavigationMenu } from "@shopify/app-bridge-react";
 import Routes from "./Routes";
-import {
-  AppType,
-  Provider as GadgetProvider,
-  useGadget,
-} from "@gadgetinc/react-shopify-app-bridge";
+import { AppType, Provider as GadgetProvider, useGadget } from "@gadgetinc/react-shopify-app-bridge";
 import { api } from "./api/gadget";
 import { PolarisProvider } from "./components";
+import { Spinner } from "@shopify/polaris";
 
 export default function App() {
   return (
-    <GadgetProvider
-      type={AppType.Embedded}
-      shopifyApiKey={process.env.SHOPIFY_API_KEY}
-      api={api}
-    >
+    <GadgetProvider type={AppType.Embedded} shopifyApiKey={process.env.SHOPIFY_API_KEY} api={api}>
       <PolarisProvider>
         <BrowserRouter>
           <EmbeddedApp />
@@ -34,7 +27,7 @@ function EmbeddedApp() {
   const pages = import.meta.globEager("./pages/**/!(*.test.[jt]sx)*.([jt]sx)");
 
   return !isAuthenticated ? (
-    <span>Loading...</span>
+    <Spinner />
   ) : (
     <>
       <NavigationMenu
