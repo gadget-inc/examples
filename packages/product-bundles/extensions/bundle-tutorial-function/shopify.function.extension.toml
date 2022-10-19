@@ -1,0 +1,11 @@
+name = "bundle-tutorial-function"
+type = "product_discounts"
+api_version = "2022-07"
+
+[build]
+command = "npm run asbuild:release"
+path = "build/release.wasm"
+
+[ui.paths]
+create = "/create-bundle"
+details = "/"
