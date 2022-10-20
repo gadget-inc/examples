@@ -217,7 +217,6 @@ export default function CreateBundle() {
                     productVariant: {
                       _link: variant.id,
                     },
-                    linePrice: variant.linePrice.toString(),
                   }));
                 }),
               },
