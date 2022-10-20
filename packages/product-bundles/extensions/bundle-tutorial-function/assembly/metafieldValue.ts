@@ -50,7 +50,6 @@ class Bundle {
       this.title = titleObj.valueOf();
     }
 
-    // Console.log(jsonObj.toString());
     let discountObj = jsonObj.getFloat("discount");
     if (discountObj != null) {
       this.discount = discountObj.valueOf();
@@ -106,7 +105,6 @@ class Node {
 
 class BundleElement {
   quantity: i64 = 0;
-  linePrice: LinePrice | null = null;
   productId: string | null = null;
   productVariantId: string | null = null;
 
@@ -114,13 +112,6 @@ class BundleElement {
     const quantityObj = jsonObj.getInteger("quantity");
     if (quantityObj != null) {
       this.quantity = quantityObj.valueOf();
-    }
-
-    const linePriceObj = jsonObj.getObj("linePrice");
-    if (linePriceObj != null) {
-      const linePrice: LinePrice = new LinePrice();
-      linePrice.deserialize(linePriceObj);
-      this.linePrice = linePrice;
     }
 
     const productIdObj = jsonObj.getString("productId");
@@ -131,17 +122,6 @@ class BundleElement {
     const productVariantIdObj = jsonObj.getString("productVariantId");
     if (productVariantIdObj != null) {
       this.productVariantId = productVariantIdObj.valueOf();
-    }
-  }
-}
-
-class LinePrice {
-  amount: f64 = 0.0;
-
-  deserialize(jsonObj: JSON.Obj): void {
-    const amountObj = jsonObj.getFloat("amount");
-    if (amountObj != null) {
-      this.amount = amountObj.valueOf();
     }
   }
 }
