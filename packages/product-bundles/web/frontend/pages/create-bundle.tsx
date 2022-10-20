@@ -28,7 +28,12 @@ export default function CreateBundle() {
   const navigate = useNavigate();
 
   // make request to Gadget app API for available products
-  const [productResults] = useFindMany(api.shopifyProduct);
+  const [productResults] = useFindMany(api.shopifyProduct, {
+    select: {
+      id: true,
+      title: true,
+    },
+  });
   // get existing bundles to filter out when adding products
   const [bundleResults] = useFindMany(api.bundle, {
     select: {
