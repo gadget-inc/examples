@@ -1,8 +1,8 @@
 import {
-  multiBundleMetaValue,
+  multiProductBundleMetaValue,
   multiVariantBundleMetaValue,
   oneBundleMetaValue,
-  oneProductTwoVariantBundleV1,
+  oneProductTwoVariantBundle,
   singleProductBundle,
   twoProductBundle,
 } from "./constants";
@@ -144,20 +144,20 @@ test("should apply multi-product bundle discount", () => {
           {
             quantity: 2,
             merchandise: {
-              id: "gid://shopify/ProductVariant/2",
+              id: "gid://shopify/ProductVariant/1",
             },
           },
           {
             quantity: 10,
             merchandise: {
-              id: "gid://shopify/ProductVariant/3",
+              id: "gid://shopify/ProductVariant/2",
             },
           },
         ],
       },
       discountNode: {
         metafield: {
-          value: multiBundleMetaValue,
+          value: multiProductBundleMetaValue,
         },
       },
     })
@@ -190,7 +190,7 @@ test("should not apply multi-product bundle discount, not enough quantity", () =
       },
       discountNode: {
         metafield: {
-          value: multiBundleMetaValue,
+          value: multiProductBundleMetaValue,
         },
       },
     })
@@ -199,45 +199,6 @@ test("should not apply multi-product bundle discount, not enough quantity", () =
   expect(JSON.parse(output)).toStrictEqual({
     discountApplicationStrategy: "FIRST",
     discounts: [],
-  });
-});
-
-test("should apply two bundle discounts", () => {
-  const output = functionRunner(
-    JSON.stringify({
-      cart: {
-        lines: [
-          {
-            quantity: 2,
-            merchandise: {
-              id: "gid://shopify/ProductVariant/1",
-            },
-          },
-          {
-            quantity: 1,
-            merchandise: {
-              id: "gid://shopify/ProductVariant/2",
-            },
-          },
-          {
-            quantity: 10,
-            merchandise: {
-              id: "gid://shopify/ProductVariant/3",
-            },
-          },
-        ],
-      },
-      discountNode: {
-        metafield: {
-          value: multiBundleMetaValue,
-        },
-      },
-    })
-  );
-
-  expect(JSON.parse(output)).toStrictEqual({
-    discountApplicationStrategy: "FIRST",
-    discounts: [singleProductBundle, twoProductBundle],
   });
 });
 
@@ -264,6 +225,6 @@ test("should work with single variant", () => {
 
   expect(JSON.parse(output)).toStrictEqual({
     discountApplicationStrategy: "FIRST",
-    discounts: [oneProductTwoVariantBundleV1],
+    discounts: [oneProductTwoVariantBundle],
   });
 });
