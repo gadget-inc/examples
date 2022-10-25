@@ -12,7 +12,7 @@ import {
   ProductVariantTarget,
   Target,
 } from "./api";
-import { BundleMetafield } from "./metafieldValue";
+import { Bundle } from "./metafieldValue";
 
 function main(stdin: string): string {
   // parse stdin to an Input object
@@ -25,33 +25,37 @@ function run(input: Input): FunctionResult {
   const cartLines = input.cart!.lines;
 
   // parse the metafield value
-  const metafieldParse = BundleMetafield.parse(input.discountNode!.metafield!.value!);
-  const bundles = metafieldParse.bundles;
+  const bundle = Bundle.parse(input.discountNode!.metafield!.value!);
 
   // if there is nothing in the cart, or no bundles, no discount needs to be applied!
-  if (cartLines.length === 0 || metafieldParse.bundles.length === 0) {
+  if (cartLines.length === 0 || bundle == null) {
     return new FunctionResult(DiscountApplicationStrategy.FIRST(), new Array());
   }
 
   // loop through each bundle to check if cart items are all included
   const discounts: Discount[] = [];
-  for (let i = 0; i < bundles.length; i++) {
-    const discountedBundleProducts = new Array<Target>();
+  const discountedBundleProducts = new Array<Target>();
 
-    const bundle = bundles[i];
-    const bundleProducts = bundle.bundleElements!.edges;
-    // check products in bundle
-    for (let j = 0; j < bundleProducts.length; j++) {
+  // keep track of unique products, not variants, in the bundle
+  let uniqueBundleProducts: string[] = [];
+
+  // check products in bundle
+  const bundleProducts = bundle.bundleElements!.edges;
+  for (let j = 0; j < bundleProducts.length; j++) {
+    const product = bundleProducts[j].node;
+
+    if (product != null && product.productId != null) {
+      if (uniqueBundleProducts.length === 0 || !uniqueBundleProducts.includes(product.productId!)) {
+        uniqueBundleProducts.push(product.productId!);
+      }
       // check products in cart
       for (let k = 0; k < cartLines.length; k++) {
         const cartLine = cartLines[k];
 
         if (cartLine.merchandise != null && cartLine.merchandise!.id != null) {
           const productUid = cartLine.merchandise!.id;
-          const product = bundleProducts[j].node;
 
           if (
-            product != null &&
             product.productVariantId != null &&
             productUid != null &&
             productUid.includes(product.productVariantId!) &&
@@ -64,13 +68,13 @@ function run(input: Input): FunctionResult {
         }
       }
     }
+  }
 
-    // check to see if we have a bundle
-    if (discountedBundleProducts.length === bundleProducts.length) {
-      // ladies and gentlemen, we have a bundle
-      // apply the discount!
-      discounts.push(new Discount(new DiscountValue(new Percentage(bundle.discount)), discountedBundleProducts, bundle.title!));
-    }
+  // check to see if we have a bundle
+  if (discountedBundleProducts.length === uniqueBundleProducts.length) {
+    // ladies and gentlemen, we have a bundle
+    // apply the discount!
+    discounts.push(new Discount(new DiscountValue(new Percentage(bundle.discount)), discountedBundleProducts, bundle.title!));
   }
 
   // return discounts (or empty array if no discounts are available)

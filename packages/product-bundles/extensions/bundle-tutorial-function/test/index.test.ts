@@ -1,4 +1,11 @@
-import { multiBundleMetaValue, oneBundleMetaValue, singleProductBundle, twoProductBundle } from "./constants";
+import {
+  multiProductBundleMetaValue,
+  multiVariantBundleMetaValue,
+  oneBundleMetaValue,
+  oneProductTwoVariantBundle,
+  singleProductBundle,
+  twoProductBundle,
+} from "./constants";
 import { functionRunner } from "./helper";
 
 test("should not apply discount: no items in cart", () => {
@@ -137,20 +144,20 @@ test("should apply multi-product bundle discount", () => {
           {
             quantity: 2,
             merchandise: {
-              id: "gid://shopify/ProductVariant/2",
+              id: "gid://shopify/ProductVariant/1",
             },
           },
           {
             quantity: 10,
             merchandise: {
-              id: "gid://shopify/ProductVariant/3",
+              id: "gid://shopify/ProductVariant/2",
             },
           },
         ],
       },
       discountNode: {
         metafield: {
-          value: multiBundleMetaValue,
+          value: multiProductBundleMetaValue,
         },
       },
     })
@@ -183,7 +190,7 @@ test("should not apply multi-product bundle discount, not enough quantity", () =
       },
       discountNode: {
         metafield: {
-          value: multiBundleMetaValue,
+          value: multiProductBundleMetaValue,
         },
       },
     })
@@ -195,7 +202,7 @@ test("should not apply multi-product bundle discount, not enough quantity", () =
   });
 });
 
-test("should apply two bundle discounts", () => {
+test("should work with single variant", () => {
   const output = functionRunner(
     JSON.stringify({
       cart: {
@@ -206,23 +213,11 @@ test("should apply two bundle discounts", () => {
               id: "gid://shopify/ProductVariant/1",
             },
           },
-          {
-            quantity: 1,
-            merchandise: {
-              id: "gid://shopify/ProductVariant/2",
-            },
-          },
-          {
-            quantity: 10,
-            merchandise: {
-              id: "gid://shopify/ProductVariant/3",
-            },
-          },
         ],
       },
       discountNode: {
         metafield: {
-          value: multiBundleMetaValue,
+          value: multiVariantBundleMetaValue,
         },
       },
     })
@@ -230,6 +225,6 @@ test("should apply two bundle discounts", () => {
 
   expect(JSON.parse(output)).toStrictEqual({
     discountApplicationStrategy: "FIRST",
-    discounts: [singleProductBundle, twoProductBundle],
+    discounts: [oneProductTwoVariantBundle],
   });
 });
