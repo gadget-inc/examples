@@ -22,7 +22,7 @@
     "packages/apollo-blog",
     "packages/file-upload",
     "packages/margin-calculator",
-    "packages/product-recommendations-quiz-app/product-quiz-ui",
+    "packages/product-recommendations-quiz-app/product-quiz-admin",
     "packages/nextjs-shopify",
     "packages/shopify-cli-embedded",
     "packages/product-bundles",
