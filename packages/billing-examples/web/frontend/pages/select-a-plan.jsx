@@ -66,7 +66,7 @@ export default function SelectAPlan() {
   // redirect to Shopify's payment confirmation page
   if (createSubscriptionResponse.data || appChargeResponse.data) {
     const data = createSubscriptionResponse.data || appChargeResponse.data;
-    window.top.location.href = data.confirmationUrl;
+    navigate(data.confirmationUrl);
 
     return (
       <Stack sectioned alignment="center">
