@@ -23,6 +23,7 @@ export default defineConfig({
   plugins: [react()],
   define: {
     "process.env.SHOPIFY_API_KEY": process.env.SHOPIFY_API_KEY,
+    "process.env.NODE_ENV": process.env.NODE_ENV,
   },
   resolve: {
     preserveSymlinks: true,
