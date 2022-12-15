@@ -1,45 +1,41 @@
 <link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
-
-<script src="YOUR DIRECT SCRIPT TAG URL HERE"></script>
-<script>
-  window.GadgetClient = new Gadget({ authenticationMode: { apiKey: "YOUR API KEY" } })
-</script>
+<!-- Find your direct script tag in the Installing section in your Gadget project's API Reference -->
+<script src=YOUR DIRECT SCRIPT TAG"></script>
 <script src="{{ 'product-quiz.js' | asset_url }}" defer="defer"></script>
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
 <div class="page-width page-width--narrow">
-  <h1 class="main-page-title page-title h0">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte">
-    {{ page.content }}
-  </div>
-  <div>
-    <product-quiz class="quiz">
-      <form action="post" class="form" novalidate="validate">
-        <h2 class="product-quiz__title">Loading...</h2>
-        <div class="product-quiz__body">
-          <span>
-            
+  <product-quiz class="quiz">
+    <h1 class="main-page-title page-title h0 product-quiz__title">
+    </h1>
+    <div class="product-quiz__body">
+      <span>
+      </span>
+    </div>
+    <div>
+    <form class="form">
+      <div class="product-quiz__questions" id="questions">
+        <div class="product-quiz__question">
+          <span class="product-quiz__question-answer">
           </span>
         </div>
-        <div class="product-quiz__questions" id="questions">
-          <div class="product-quiz__question">
-            <span class="product-quiz__question-answer">
-            </span>
-          </div>
-        </div>
-        <button
-                type="submit"
-                class="product-quiz__submit button button--secondary"
-                >
-          Get my results!
-        </button>
-      </form>
-    </product-quiz>
-  </div>
+      </div>
+      <hr class="product-quiz__submit-hr" />
+      <div class="product-quiz__email-container">
+        <label for="email">Enter your email to complete quiz</label><br>
+        <input type="email" id="product-quiz__email" name="email" required="required" style="font-size: 16px; height: 32px"><br><br>
+      </div>
+      <button
+        name="quiz-submit"
+        type="submit"
+        class="product-quiz__submit button button--secondary"
+      >
+        Get my results
+      </button>
+    </form>
+  </product-quiz>
 </div>
 
 {% schema %}
