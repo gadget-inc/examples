@@ -41,8 +41,7 @@ async function fetchQuiz(quizId) {
         edges: {
           node: {
             id: true,
-            title: true,
-            body: true,
+            text: true,
             answers: {
               edges: {
                 node: {
@@ -148,7 +147,7 @@ fetchQuiz(QUIZ_ID).then(async (quiz) => {
             clonedDiv.id = "question_" + i;
             clonedDiv.insertAdjacentHTML(
               "beforeend",
-              "<hr /><div><h3>" + question.node.title + `</h3></div><div class='product-quiz__answers_${i}'></div>`
+              "<hr /><div><h3>" + question.node.text + `</h3></div><div class='product-quiz__answers_${i}'></div>`
             );
             this.questions.appendChild(clonedDiv);
 

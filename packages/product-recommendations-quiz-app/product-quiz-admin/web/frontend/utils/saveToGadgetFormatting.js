@@ -49,14 +49,14 @@ export const formatQuizQuestions = (questionInput) => {
       ? {
           update: {
             id: q.id,
-            title: q.question,
+            text: q.question,
             answers,
           },
         }
       : // or create a new question
         {
           create: {
-            title: q.question,
+            text: q.question,
             answers,
           },
         };

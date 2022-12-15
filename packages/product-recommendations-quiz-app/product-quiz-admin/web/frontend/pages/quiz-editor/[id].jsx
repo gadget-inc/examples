@@ -31,7 +31,7 @@ export default function QuizEditorPage() {
         edges: {
           node: {
             id: true,
-            title: true,
+            text: true,
             answers: {
               edges: {
                 node: {
@@ -119,7 +119,7 @@ export default function QuizEditorPage() {
     const { data } = quizResponse;
     const questions = data.questions.edges.map((question) => ({
       id: question.node.id,
-      question: question.node.title,
+      question: question.node.text,
       answers: question.node.answers.edges.map((answer) => ({
         id: answer.node.id,
         answer: answer.node.text,
