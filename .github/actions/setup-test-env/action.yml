@@ -5,11 +5,19 @@ outputs: {}
 runs:
     using: "composite"
     steps:
-    - uses: cachix/install-nix-action@v15
-      with:
-        install_url: https://releases.nixos.org/nix/nix-2.11.1/install
+    - uses: cachix/install-nix-action@v18
     - run: nix flake check
       shell: bash
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+      shell: bash
+    - uses: actions/cache@v1
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
     - name: Add Gadget yarn registry
       shell: nix develop -c bash -eo pipefail -l {0}
       run: npm config set @gadget-client:registry https://registry.gadget.dev/npm

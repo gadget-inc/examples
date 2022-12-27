@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "next test",
+    "test": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,7 +14,7 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@gadget-client/simple-ticket-example": "^1.61.0",
-    "@gadgetinc/react": "^0.7.2",
+    "@gadgetinc/react": "^0.10.0",
     "chakra-theme": "*",
     "framer-motion": "^4",
     "next": "12.2.2",

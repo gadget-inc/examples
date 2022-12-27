@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "next test",
+    "test": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,7 +14,7 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@gadget-client/simple-blog-example": "^1.102.0",
-    "@gadgetinc/react": "^0.7.2",
+    "@gadgetinc/react": "^0.10.0",
     "chakra-theme": "*",
     "chakra-ui-autocomplete": "^1.4.5",
     "chakra-ui-markdown-renderer": "^4.0.0",

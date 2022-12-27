@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@gadget-client/billing-tutorial": "^1.2348.0",
-    "@gadgetinc/react": "^0.8.2",
-    "@gadgetinc/react-shopify-app-bridge": "^0.4.3",
+    "@gadgetinc/react": "^0.10.0",
+    "@gadgetinc/react-shopify-app-bridge": "^0.8.0",
     "@shopify/app-bridge": "^3.1.0",
     "@shopify/app-bridge-react": "^3.1.0",
     "@shopify/app-bridge-utils": "^3.1.0",

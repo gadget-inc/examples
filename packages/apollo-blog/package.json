@@ -14,7 +14,7 @@
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@gadgetinc/react": "^0.7.2",
+    "@gadgetinc/react": "^0.10.0",
     "chakra-theme": "*",
     "chakra-ui-autocomplete": "^1.4.5",
     "chakra-ui-markdown-renderer": "^4.0.0",
