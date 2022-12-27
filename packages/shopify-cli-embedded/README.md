@@ -11,7 +11,7 @@ This is an app template that has all the main pieces of a Shopify CLI app setup 
 - Shopify's React component library, `@shopify/polaris` is installed and their default `PolarisProvider` and route helping are included
 - a local SSL-friendly development setup that plays nice with Shopify's SSL requirement for embedded apps
 
-**Note**: Files that are no longer necessary have been removed, such as auth handling middleware or custom hooks. The Gadget API client or provided npm modules `@gadgetinc/react` and `@gadgetinc/react-shopify-app-bridge` handle this functionality.
+**Note**: Files created in the default Shopify CLI app that are no longer necessary have been removed. This includes most of the node.js backend application which is replaced by your Gadget app's backend, and some of the default front-end React code which is replaced by the Gadget API client and the `@gadgetinc/react` and `@gadgetinc/react-shopify-app-bridge` npm modules.
 
 ## Getting Started
 
