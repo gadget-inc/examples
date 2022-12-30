@@ -14,19 +14,19 @@
     "x": "esbuild-dev --watch=false"
   },
   "workspaces": [
+    "packages/apollo-blog",
+    "pacakges/billing-examples",
     "packages/chakra-theme",
+    "packages/file-upload",
     "packages/login-logout",
+    "packages/margin-calculator",
+    "packages/nextjs-shopify",
+    "packages/product-bundles",
+    "packages/product-recommendations-quiz-app/product-quiz-admin",
+    "packages/shopify-cli-embedded",
     "packages/related-products",
     "packages/simple-blog",
-    "packages/simple-form",
-    "packages/apollo-blog",
-    "packages/file-upload",
-    "packages/margin-calculator",
-    "packages/product-recommendations-quiz-app/product-quiz-admin",
-    "packages/nextjs-shopify",
-    "packages/shopify-cli-embedded",
-    "packages/product-bundles",
-    "pacakges/billing-examples"
+    "packages/simple-form"
   ],
   "dependencies": {
     "@gadgetinc/eslint-config": "^0.4.0",
@@ -43,8 +43,8 @@
     "esbuild-dev": "^0.9.1"
   },
   "resolutions": {
-    "@gadgetinc/api-client-core": "0.10.0",
-    "@gadgetinc/react": "0.8.0",
+    "@gadgetinc/api-client-core": "0.10.1",
+    "@gadgetinc/react": "0.10.0",
     "@types/react": "^17.0.38",
     "next": "12.2.2",
     "typescript": "4.7.4"

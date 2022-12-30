@@ -6,6 +6,7 @@
   "scripts": {
     "shopify": "shopify",
     "build": "shopify app build",
+    "test": "shopify app build",
     "dev": "shopify app dev --no-update",
     "info": "shopify app info",
     "generate": "shopify app generate",

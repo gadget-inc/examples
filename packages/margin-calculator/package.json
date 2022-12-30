@@ -8,11 +8,12 @@
     "build": "remix build",
     "dev": "remix dev",
     "postinstall": "remix setup node",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "test": "remix build"
   },
   "dependencies": {
     "@gadget-client/margin-calculator-example": "^1.114.0",
-    "@gadgetinc/react": "^0.7.2",
+    "@gadgetinc/react": "^0.10.0",
     "@remix-run/react": "^1.1.1",
     "@remix-run/serve": "^1.1.1",
     "@shopify/polaris": "^9.21.1",
