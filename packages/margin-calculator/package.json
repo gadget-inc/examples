@@ -8,7 +8,8 @@
     "build": "remix build",
     "dev": "remix dev",
     "postinstall": "remix setup node",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "test": "remix build"
   },
   "dependencies": {
     "@gadget-client/margin-calculator-example": "^1.114.0",

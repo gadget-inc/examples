@@ -9,3 +9,10 @@ jobs:
       - uses: ./.github/actions/setup-test-env
       - name: Lint
         run: nix develop -c yarn lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-test-env
+      - name: Test each package
+        run: nix develop -c yarn workspaces run test

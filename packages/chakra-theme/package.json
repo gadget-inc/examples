@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "main": "index.ts",
+  "scripts": {
+    "test": "tsc --noEmit"
+  },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
     "react": "17.0.2",
