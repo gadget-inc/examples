@@ -5,7 +5,7 @@ This is an example [Shopify CLI](https://shopify.dev/apps/getting-started/create
 This is an app template that has all the main pieces of a Shopify CLI app setup already:
 
 - the connection to the Gadget backend is installed using the API client package for an example app (`@gadget-client/shopify-cli-connection`) (see https://docs.gadget.dev/api/public-test/installing)
-- the connection to the Gadget backend is instantiated in `web/frontend/api/api.js`
+- the connection to the Gadget backend is instantiated in `web/frontend/api.js`
 - the OAuth flow for installing and authenticating users is setup by installing `@gadgetinc/react-shopify-app-bridge` and wrapping the app with the `GadgetProvider` in `App.jsx` (see https://www.npmjs.com/package/@gadgetinc/react-shopify-app-bridge)
 - the Shopify App Bridge for managing an app embed is setup automatically by `@gadgetinc/react-shopify-app-bridge`
 - Shopify's React component library, `@shopify/polaris` is installed and their default `PolarisProvider` and route helping are included

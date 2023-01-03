@@ -5,7 +5,7 @@ import Routes from "./Routes";
 import { PolarisProvider } from "./components";
 
 import { AppType, Provider as GadgetProvider, useGadget } from "@gadgetinc/react-shopify-app-bridge";
-import { api } from "./api/api";
+import { api } from "./api";
 
 export default function App() {
   return (
