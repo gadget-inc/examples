@@ -16,24 +16,12 @@ const proxyOptions = {
   ws: false,
 };
 
-const host = process.env.HOST ? process.env.HOST.replace(/https?:\/\//, "") : "localhost";
-
-let hmrConfig;
-if (host === "localhost") {
-  hmrConfig = {
-    protocol: "ws",
-    host: "localhost",
-    port: 64999,
-    clientPort: 64999,
-  };
-} else {
-  hmrConfig = {
-    protocol: "wss",
-    host: host,
-    port: process.env.FRONTEND_PORT,
-    clientPort: 443,
-  };
-}
+const hmrConfig = {
+  protocol: "ws",
+  host: "localhost",
+  port: 64999,
+  clientPort: 64999,
+};
 
 export default defineConfig({
   root: dirname(fileURLToPath(import.meta.url)),

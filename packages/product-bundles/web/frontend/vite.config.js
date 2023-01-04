@@ -12,7 +12,7 @@ if (process.env.npm_lifecycle_event === "build" && !process.env.CI && !process.e
 
 const FRONTEND_PORT = 3000;
 
-let hmrConfig = {
+const hmrConfig = {
   protocol: "ws",
   host: "localhost",
   port: FRONTEND_PORT,
