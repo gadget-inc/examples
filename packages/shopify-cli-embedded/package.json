@@ -13,8 +13,8 @@
     "deploy": "shopify app deploy"
   },
   "dependencies": {
-    "@shopify/app": "3.5.0",
-    "@shopify/cli": "3.5.0"
+    "@shopify/app": "3.28.0",
+    "@shopify/cli": "3.28.0"
   },
   "author": "gadget"
 }

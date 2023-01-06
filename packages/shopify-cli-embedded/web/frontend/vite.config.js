@@ -9,27 +9,39 @@ if (process.env.npm_lifecycle_event === "build" && !process.env.CI && !process.e
   );
 }
 
-const FRONTEND_PORT = 3000;
+const proxyOptions = {
+  target: `http://127.0.0.1:${process.env.BACKEND_PORT}`,
+  changeOrigin: false,
+  secure: true,
+  ws: false,
+};
 
-let hmrConfig = {
+const hmrConfig = {
   protocol: "ws",
   host: "localhost",
-  port: FRONTEND_PORT,
-  clientPort: FRONTEND_PORT,
+  port: 64999,
+  clientPort: 64999,
 };
 
 export default defineConfig({
   root: dirname(fileURLToPath(import.meta.url)),
   plugins: [react()],
   define: {
-    "process.env.SHOPIFY_API_KEY": process.env.SHOPIFY_API_KEY,
+    "process.env": JSON.stringify({
+      SHOPIFY_API_KEY: process.env.SHOPIFY_API_KEY,
+      NODE_ENV: process.env.NODE_ENV,
+    }),
   },
   resolve: {
     preserveSymlinks: true,
   },
   server: {
     host: "localhost",
-    port: FRONTEND_PORT,
+    port: process.env.FRONTEND_PORT,
     hmr: hmrConfig,
+    proxy: {
+      "^/(\\?.*)?$": proxyOptions,
+      "^/api(/|(\\?.*)?$)": proxyOptions,
+    },
   },
 });
