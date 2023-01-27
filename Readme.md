@@ -93,7 +93,7 @@ Features used:
 
 ## File Uploads
 
-[Code](https://github.com/gadget-inc/examples/tree/main/packages/file-uploads) | [Preview Site](https://gadget-file-uploads-example.vercel.app/) | [API Reference](https://docs.gadget.dev/api/files-example)
+[Code](https://github.com/gadget-inc/examples/tree/main/packages/file-upload) | [Preview Site](https://gadget-file-upload-example.vercel.app/) | [API Reference](https://docs.gadget.dev/api/files-example)
 
 This is an example of using Gadget's built in file storage system where applications can easily store images, pdfs, audio files, or anything on behalf of users.
 
