@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "vite build",
-    "dev": "vite & local-ssl-proxy --source 443 --target 3000",
+    "dev": "vite & local-ssl-proxy --source 443 --target 3005",
     "coverage": "vitest run --coverage"
   },
   "type": "module",
