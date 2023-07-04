@@ -17,7 +17,6 @@
     "packages/apollo-blog",
     "packages/chakra-theme",
     "packages/file-upload",
-    "packages/login-logout",
     "packages/margin-calculator",
     "packages/nextjs-shopify",
     "packages/shopify-cli-embedded",
