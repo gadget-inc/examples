@@ -26,7 +26,8 @@
     "packages/shopify-cli-embedded",
     "packages/related-products",
     "packages/simple-blog",
-    "packages/simple-form"
+    "packages/simple-form",
+    "packages/vip-loyalty-admin-extensions"
   ],
   "dependencies": {
     "@gadgetinc/eslint-config": "^0.4.0",
